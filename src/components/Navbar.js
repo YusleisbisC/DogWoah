@@ -1,13 +1,11 @@
-
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav>
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/productos">Productos</a></li>
-        <li><a href="/envios">Envíos</a></li>
-      </ul>
+      
+       <Link to={'/envios'}>Envios</Link>
+       <Link to={'/productos'}>Productos</Link>
       <div className="cart-icon">
         {/* Icono de carrito */}
       </div>
@@ -15,4 +13,4 @@ export const Navbar = () => {
   );
 };
 
-export default Navbar;
+
