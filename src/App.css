@@ -1,38 +1,57 @@
-.App {
+/* En tu archivo de estilos (por ejemplo, App.css) */
+.slideshow-container {
+  position: relative;
+  height: 300px; /* Ajusta la altura según sea necesario */
+}
+
+.content {
   text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para el texto */
+  /* Añade estilos adicionales según tus preferencias */
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* En tu archivo de estilos (por ejemplo, App.css) */
+.search-input {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-right: 5px;
+  width: 150px; /* Ajusta el ancho según sea necesario */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-icon {
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cart-icon {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+/* Agrega esto a tu hoja de estilos CSS */
+@keyframes addItemAnimation {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.add-item-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: green;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 4px 8px;
+  border-radius: 50%;
+  animation: addItemAnimation 0.3s ease-in-out;
 }
