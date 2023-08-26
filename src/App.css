@@ -1,3 +1,92 @@
+
+/* Estilos generales del Navbar */
+nav {
+  background-color: #333;
+  color: rgb(59, 54, 54);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+/* Estilos para los enlaces del Navbar */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  
+}
+
+/* Estilos para los enlaces activos */
+nav a.active {
+  font-weight: bold;
+  
+}
+/* Estilos para los iconos de búsqueda y carrito */
+.search-cart-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon,
+.cart-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+/* Estilos para los botones */
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+  
+}
+
+button:hover {
+  background-color: #555;
+  cursor: pointer;
+  
+}
+
+/* Estilos para el formulario de búsqueda */
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+/* Estilos para la lista de productos en el carrito */
+.modal-body > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+/* Estilos para el total del carrito */
+.modal-body > div:last-child {
+  border-bottom: none;
+  font-weight: bold;
+}
+
+/* Estilos para el botón Cerrar de los modales */
+.modal-footer {
+  justify-content: center;
+}
+/* Estilo personalizado para ocultar la línea bajo el modal */
+.modal-content {
+  border: none; /* Elimina el borde inferior */
+  box-shadow: none; /* Elimina la sombra */
+}
+
 /* En tu archivo de estilos (por ejemplo, App.css) */
 .slideshow-container {
   position: relative;
@@ -12,46 +101,53 @@
  
 }
 
-/* En tu archivo de estilos (por ejemplo, App.css) */
-.search-input {
-  padding: 5px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  margin-right: 5px;
-  width: 150px; /* Ajusta el ancho según sea necesario */
+/* Estilos para el contenido del modal */
+.search-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-.search-icon {
+/* Estilos para el botón de búsqueda */
+.search-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.cart-icon {
-  display: flex;
-  align-items: center;
-}
-/* Agrega esto a tu hoja de estilos CSS */
-@keyframes addItemAnimation {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.cart-icon {
-  position: relative;
-}
-
-.add-item-animation {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: green;
+/* Estilos para el botón de cierre */
+.close-button {
+  background-color: red;
   color: white;
-  padding: 4px 8px;
-  border-radius: 50%;
-  animation: addItemAnimation 0.3s ease-in-out;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search-cart-container {
+    margin-bottom: 20px;
+  }
+  .search-icon,
+  .cart-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .modal-body > div {
+    flex-direction: column;
+  }
+}
+

@@ -1,7 +1,8 @@
-
+import { Navbar } from './Navbar';
 export const Contact = () => {
   return (
     <div>
+      <Navbar/>
       <h2>Contacto</h2>
       <p>¡Estamos aquí para ayudarte! Puedes contactarnos de las siguientes formas:</p>
       

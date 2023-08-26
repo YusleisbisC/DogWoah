@@ -1,5 +1,9 @@
+import { Navbar } from "./Navbar";
 
 
 export const Envios = () => {
-  return <div>Envios</div>;
+
+  return <div>
+     <Navbar/>
+     Envios</div>;
 };
