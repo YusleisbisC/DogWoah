@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-bootstrap/Modal';
-
+import './nav.css';
 import {SearchModal} from './SearchModal';
+
 
 
 
@@ -34,17 +35,20 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">DogWoah</Link>
+      <Link className="navbar-brand" to="/">
+  <span className="logo">DogWoah</span>
+</Link>
+
       <div className="ml-auto">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/productos">Productos</Link>
+            <Link className="nav-link" to="/productos">Produtos</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/contact">Contact</Link>
+            <Link className="nav-link" to="/contact">Contato</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/envios">Envíos</Link>
