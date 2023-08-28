@@ -48,3 +48,5 @@ export const SearchModal = ({ toggleModal, searchFunction }) => {
     </div>
   );
 };
+
+

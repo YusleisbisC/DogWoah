@@ -23,9 +23,29 @@ export const CartPage = (  ) => {
   const handleRemoveFromCart = (index) => {
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
-    setItems(updatedItems);
-   
-  };
+    setItems(updatedIt
+=======
+  return (
+    <div>
+      <Navbar/>
+      <h2>Carrito de Compras</h2>
+      {items.length === 0 ? (
+        <p>O carrinho de compras está vazio.</p>
+      ) : (
+        <div>
+          {items.map((product, index) => (
+            <div key={index}>
+              <p>{product.name}</p>
+              <p>Precio: {product.price}</p>
+              <button onClick={() => handleRemoveFromCart(index)}>Eliminar</button>
+            </div>
+          ))}
+          <p>Total: {calculateTotal()}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 
 
