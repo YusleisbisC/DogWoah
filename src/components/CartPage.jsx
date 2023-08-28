@@ -1,6 +1,7 @@
 // CartPage.js
 import React, { useState } from 'react';
-import { Navbar } from './Navbar';
+import './CartPage.css';
+
 
 
 
@@ -26,26 +27,28 @@ export const CartPage = (  ) => {
    
   };
 
-  return (
-    <div>
-      <Navbar/>
-      <h2>Carrito de Compras</h2>
-      {items.length === 0 ? (
-        <p>El carrito de compras está vacío.</p>
-      ) : (
-        <div>
-          {items.map((product, index) => (
-            <div key={index}>
-              <p>{product.name}</p>
-              <p>Precio: {product.price}</p>
-              <button onClick={() => handleRemoveFromCart(index)}>Eliminar</button>
-            </div>
-          ))}
-          <p>Total: {calculateTotal()}</p>
-        </div>
-      )}
-    </div>
-  );
-};
 
 
+return (
+  <div className="cart-container">
+    
+    <h2>Carrinho de compras</h2>
+    {items.length === 0 ? (
+      <p className="empty-cart">O carrinho de compras está vazio.</p>
+    ) : (
+      <div>
+        {items.map((product, index) => (
+          <div className="cart-item" key={index}>
+            <p>{product.name}</p>
+            <p>Precio: {product.price}</p>
+            <button onClick={() => handleRemoveFromCart(index)}>Eliminar</button>
+          </div>
+        ))}
+        <p className="cart-total">Total: {calculateTotal()}</p>
+        <a href="http://localhost:3001/productos" className="continue-shopping">
+          Continuar Comprando
+        </a>
+      </div>
+    )}
+  </div>
+)};

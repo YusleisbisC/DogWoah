@@ -7,7 +7,11 @@ nav {
   align-items: center;
   padding: 10px 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Agrega margen inferior para separar el área de carrito */
+  position: relative; /* Añade posición relativa para el z-index */
+  z-index: 2; /* Añade z-index para estar por encima del área de carrito */
 }
+
 
 /* Estilos para el logotipo del Navbar */
 .navbar-brand {
