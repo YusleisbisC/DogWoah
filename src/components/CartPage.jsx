@@ -31,7 +31,7 @@ export const CartPage = (  ) => {
       <Navbar/>
       <h2>Carrito de Compras</h2>
       {items.length === 0 ? (
-        <p>El carrito de compras está vacío.</p>
+        <p>O carrinho de compras está vazio.</p>
       ) : (
         <div>
           {items.map((product, index) => (
