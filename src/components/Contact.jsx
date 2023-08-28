@@ -1,8 +1,11 @@
+import { Footer } from './Footer';
 import { Navbar } from './Navbar';
+
 export const Contact = () => {
   return (
     <div>
       <Navbar/>
+      
       <h2>Contacto</h2>
       <p>¡Estamos aquí para ayudarte! Puedes contactarnos de las siguientes formas:</p>
       
@@ -15,7 +18,11 @@ export const Contact = () => {
       
       <h3>Horario de Atención:</h3>
       <p>Nuestro equipo está disponible de lunes a viernes, de 9:00 a.m. a 5:00 p.m.</p>
+      <div>
+      <Footer/>
+      </div>
     </div>
+    
   );
 };
 
