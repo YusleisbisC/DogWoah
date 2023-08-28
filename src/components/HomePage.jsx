@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from "./Navbar";
-import Slideshow from "./Slideshow"; // Asegúrate de tener la ruta correcta
+import {Slideshow} from "./Slideshow"; // Asegúrate de tener la ruta correcta
 
 
 export const HomePage = () => {
@@ -11,6 +11,9 @@ export const HomePage = () => {
         <Slideshow />
       </div>
       <div className="content">Bienvenidos a DogWuaoh</div>
+      <div>
+        Productos destacados
+      </div>
     </div>
   );
 };

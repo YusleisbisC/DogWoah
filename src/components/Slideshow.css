@@ -1,0 +1,41 @@
+/* Slideshow.css */
+
+/* Estilo para el contenedor del carousel */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    max-height: max-content;
+  }
+  
+  /* Estilo para las imágenes dentro del carousel */
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilo para los puntos indicadores del carousel (si los utilizas) */
+  .carousel .control-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilo para los puntos indicadores individuales */
+  .carousel .control-dots .dot {
+    background-color: #ccc;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para el punto indicador activo */
+  .carousel .control-dots .dot.selected {
+    background-color: #333;
+  }
+  
+  
