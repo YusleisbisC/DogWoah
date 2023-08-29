@@ -1,15 +1,14 @@
-// CartPage.js
 import React, { useState } from 'react';
 import './CartPage.css';
 
+export const CartPage = () => {
+  const cartItems = [
+    {
+      name: 'correa',
+      price: '2',
+    },
+  ];
 
-
-
-export const CartPage = (  ) => {
-  const cartItems = [{ 
-   name: 'correa',
-   price: '2 '
-  }]
   const [items, setItems] = useState(cartItems);
 
   const calculateTotal = () => {
@@ -23,52 +22,29 @@ export const CartPage = (  ) => {
   const handleRemoveFromCart = (index) => {
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
-    setItems(updatedIt
-=======
+    setItems(updatedItems);
+  };
+
   return (
-    <div>
-      <Navbar/>
+    <div className="cart-container">
       <h2>Carrito de Compras</h2>
       {items.length === 0 ? (
-        <p>O carrinho de compras está vazio.</p>
+        <p className="empty-cart">El carrito de compras está vacío.</p>
       ) : (
         <div>
           {items.map((product, index) => (
-            <div key={index}>
+            <div className="cart-item" key={index}>
               <p>{product.name}</p>
               <p>Precio: {product.price}</p>
               <button onClick={() => handleRemoveFromCart(index)}>Eliminar</button>
             </div>
           ))}
-          <p>Total: {calculateTotal()}</p>
+          <p className="cart-total">Total: {calculateTotal()}</p>
+          <a href="http://localhost:3000/productos" className="continue-shopping">
+            Continuar Comprando
+          </a>
         </div>
       )}
     </div>
   );
 };
-
-
-
-return (
-  <div className="cart-container">
-    
-    <h2>Carrinho de compras</h2>
-    {items.length === 0 ? (
-      <p className="empty-cart">O carrinho de compras está vazio.</p>
-    ) : (
-      <div>
-        {items.map((product, index) => (
-          <div className="cart-item" key={index}>
-            <p>{product.name}</p>
-            <p>Precio: {product.price}</p>
-            <button onClick={() => handleRemoveFromCart(index)}>Eliminar</button>
-          </div>
-        ))}
-        <p className="cart-total">Total: {calculateTotal()}</p>
-        <a href="http://localhost:3001/productos" className="continue-shopping">
-          Continuar Comprando
-        </a>
-      </div>
-    )}
-  </div>
-)};

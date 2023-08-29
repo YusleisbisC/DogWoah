@@ -1,0 +1,106 @@
+
+    /* Footer.css */
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        
+       
+      }
+      
+    /* Estilos para los enlaces en el footer */
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+      }
+      
+      .footer-links li {
+        margin: 0px;
+      }
+      
+      .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+      
+      .footer-links a:hover {
+        color: #ff9900;
+      }
+      
+      /* Estilos para la palabra DOGWOAH en el footer */
+      .footer-logo h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff9900;
+        margin-top: 0px;
+      }
+      
+      /* Estilos para los íconos de redes sociales */
+      .footer-social a {
+        color: #333;
+        font-size: 24px;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: color 0.3s;
+        
+        
+      }
+      
+      .footer-social a:hover {
+        color: #ff9900;
+        
+        
+      }
+      .footer-social{
+        margin-bottom: 20px;
+      }
+      /* Estilos para el texto de derechos de autor en el footer */
+      .footer-bottom p {
+        text-align: center;
+        color: #666;
+        margin-top: 10px;
+      }
+      .footer {
+        z-index: 999; 
+        border: #666;
+        border-top: 1px solid #ccc;/* Un valor alto para asegurarte de que esté en la parte superior */
+        /* ...otros estilos... */
+    }
+
+    /* Footer.css */
+.footer-payment {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+   
+  }
+  
+  .payment-icons {
+    margin-top: 10px;
+  }
+  
+  .payment-icon {
+    font-size: 36px;
+    margin: 0 10px;
+    color: #0070ba; /* Color de los iconos (puedes cambiarlo) */
+  }
+  
+  /* Estilos adicionales según tus preferencias */
+  /* Estilos para el ícono de WhatsApp */
+.fab.fa-whatsapp {
+    color: #25d366; /* Color de WhatsApp (puedes cambiarlo) */
+   
+  }
+  
+  /* Estilos para el ícono de correo electrónico */
+  .far.fa-envelope {
+    color: #0070ba; /* Color del correo electrónico (puedes cambiarlo) */
+    
+  }
+  

@@ -5,6 +5,7 @@
     position: relative;
     max-width: 100%;
     max-height: max-content;
+    margin-bottom: 20px;
   }
   
   /* Estilo para las imágenes dentro del carousel */
@@ -37,5 +38,5 @@
   .carousel .control-dots .dot.selected {
     background-color: #333;
   }
-  
+ 
   
