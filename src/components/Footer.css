@@ -1,19 +1,27 @@
 
     /* Footer.css */
+
+    .footer {
+      
+      z-index: 999; 
+      border: #666;
+      border-top: 1px solid #9c9898;/* Un valor alto para asegurarte de que esté en la parte superior */
+      /* ...otros estilos... */
+  }
+  
     .footer-content {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-top: 20px;
+        background-color: #f8f8f8;
         
-       
       }
       
     /* Estilos para los enlaces en el footer */
     .footer-links ul {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 10px;
         display: flex;
         gap: 20px;
       }
@@ -38,7 +46,7 @@
         font-size: 24px;
         font-weight: bold;
         color: #ff9900;
-        margin-top: 0px;
+        margin-top: 50px;
       }
       
       /* Estilos para los íconos de redes sociales */
@@ -49,7 +57,6 @@
         text-decoration: none;
         transition: color 0.3s;
         
-        
       }
       
       .footer-social a:hover {
@@ -58,25 +65,21 @@
         
       }
       .footer-social{
-        margin-bottom: 20px;
+        margin-top: 50px;
       }
       /* Estilos para el texto de derechos de autor en el footer */
       .footer-bottom p {
         text-align: center;
         color: #666;
-        margin-top: 10px;
+        
+        background-color: #dad5d5;
       }
-      .footer {
-        z-index: 999; 
-        border: #666;
-        border-top: 1px solid #ccc;/* Un valor alto para asegurarte de que esté en la parte superior */
-        /* ...otros estilos... */
-    }
+      
 
     /* Footer.css */
 .footer-payment {
     background-color: #f8f8f8;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
    
   }
