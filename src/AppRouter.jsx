@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
-import { ProductsPage } from "./components/ProductsPage";
 import { ShippingForm } from "./components/ShippingForm";
 import { Contact } from "./components/Contact";
 import {CartPage }from "./components/CartPage";
+import { BañoPage } from "./components/BañoPage";
+import { AlimentosPage } from "./components/AlimentosPage";
+import { BrinquedosPage } from "./components/BrinquedosPage";
 
 
 
@@ -14,8 +16,8 @@ export const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/productos",
-    element: <ProductsPage />,
+    path: "/produtos/Baño",
+    element: <BañoPage />,
   },
   {
     path: "/contact",
@@ -28,5 +30,18 @@ export const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartPage />,
-  }, // Agregado el elemento CartPage
+
+  },
+  {
+    path: "/produtos/Alimentos",
+    element: <AlimentosPage />,
+
+  },
+  {
+    path: "/produtos/Brinquedos",
+    element: <BrinquedosPage/>,
+
+  },
+  
+  
 ]);
