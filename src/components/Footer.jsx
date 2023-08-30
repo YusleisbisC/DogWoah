@@ -14,7 +14,7 @@ export const Footer = () => {
           <ul>
             <li><a href="/" className="footer-link">Home</a></li>
             <li><a href="/productos" className="footer-link">Produtos</a></li>
-            <li><a href="/contacto" className="footer-link">Contato</a></li>
+            <li><a href="/Contact" className="footer-link">Contato</a></li>
           </ul>
         </div>
         <div className="footer-social">

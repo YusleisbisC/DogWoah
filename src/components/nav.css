@@ -1,15 +1,11 @@
 /* Estilos para el contenedor del Navbar */
 nav {
-  background-color: #333;
+  background-color: #7c3838;
   color: rgb(59, 54, 54);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px; /* Agrega margen inferior para separar el área de carrito */
-  position: relative; /* Añade posición relativa para el z-index */
-  z-index: 2; /* Añade z-index para estar por encima del área de carrito */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Agrega margen inferior para separar el área de carrito */
+
 }
 
 
@@ -52,7 +48,7 @@ nav {
   font-family: 'Your-Font-Here', sans-serif; 
   font-size: 30px; /* Tamaño de fuente personalizado */
   font-weight: bold; /* Puedes ajustar el grosor de la fuente según tu preferencia */
-  color: #2c3233; /* Color personalizado para el logotipo */
+  color: #ff9900;/* Color personalizado para el logotipo */
   text-transform: uppercase; /* Convierte el texto en mayúsculas si lo deseas */
   
 }
@@ -70,11 +66,6 @@ nav {
 }
 
 
-/* Estilos para el icono de búsqueda y el carrito */
-.search-cart-container {
-  display: flex;
-  align-items: center;
-}
 
 .search-icon,
 .cart-icon {

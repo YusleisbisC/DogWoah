@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
 import { ProductsPage } from "./components/ProductsPage";
-import { Envios } from "./components/Envios";
+import { ShippingForm } from "./components/ShippingForm";
 import { Contact } from "./components/Contact";
 import {CartPage }from "./components/CartPage";
 
@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/envios",
-    element: <Envios />,
+    element: <ShippingForm />,
   },
   {
     path: "/cart",
