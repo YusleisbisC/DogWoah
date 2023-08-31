@@ -4,24 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-bootstrap/Modal';
 import './nav.css';
-import {SearchModal} from './SearchModal';
-
-
-
-
+import { SearchModal } from './SearchModal';
 
 export const Navbar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showSearchModal, setShowSearchModal] = useState(false);
-  
-
+  const [showCategoriesMenu, setShowCategoriesMenu] = useState(false);
 
   const toggleSearchModal = () => {
     setShowSearchModal(!showSearchModal);
   };
 
   const toggleCartModal = () => {
-    navigate("/cart")
+    navigate("/cart");
+  };
+
+  const toggleCategoriesMenu = () => {
+    setShowCategoriesMenu(!showCategoriesMenu);
   };
 
   const yourSearchFunction = () => {
@@ -29,15 +28,11 @@ export const Navbar = () => {
     toggleSearchModal();
   };
 
- 
-
-  
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-  <span className="logo">DogWoah</span>
-</Link>
+        <span className="logo">DogWoah</span>
+      </Link>
 
       <div className="ml-auto">
         <ul className="navbar-nav">
@@ -45,7 +40,21 @@ export const Navbar = () => {
             <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/productos">Produtos</Link>
+            <span className="nav-link" onClick={toggleCategoriesMenu}>
+              Produtos
+              <ul className={`categories-menu ${showCategoriesMenu ? 'show' : ''}`}>
+                
+                <li className='baño-li'>
+                  <Link to="/produtos/Baño">Baño</Link>
+                </li>
+                <li className='comida-li'>
+                  <Link to="/produtos/Alimentos">Alimentos</Link>
+                </li>
+                <li className='juegos-li'>
+                  <Link to="/produtos/Brinquedos">Brinquedos</Link>
+                </li>
+              </ul>
+            </span>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">Contato</Link>

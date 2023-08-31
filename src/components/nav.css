@@ -137,3 +137,45 @@ input[type="text"] {
   
 }
 
+/* Estilo para el menú de categorías */
+.categories-menu {
+  display: none; /* Inicialmente, ocultamos el menú de categorías */
+  position: fixed;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Asegura que esté por encima de otros elementos */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+/* Estilo para los elementos de categoría en el menú */
+.categories-menu li {
+  padding: 10px;
+ 
+  
+
+
+}
+
+/* Estilo para los enlaces de categoría en el menú */
+.categories-menu a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el ratón por encima de una categoría */
+.categories-menu a:hover {
+  color: #007bff;
+}
+
+/* Estilo para mostrar el menú de categorías cuando está abierto */
+.categories-menu.show {
+  display: block;
+}
+
+

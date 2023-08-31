@@ -1,0 +1,185 @@
+{
+    "productosBaño": [
+      {
+        "id": 1,
+        "name": "Champú para cachorros",
+        "image": "imagenes/champu-1.jpg",
+        "price": 12.99
+      },
+      {
+        "id": 2,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 3,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 4,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 5,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 6,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 7,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 8,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 9,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      },
+      {
+        "id": 10,
+        "name": "Cepillo suave",
+        "image": "imagenes/cepillo.jpg",
+        "price": 8.49
+      }
+      
+    ],
+    "productosJuego": [
+      {
+        "id": 1,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 2,
+        "name": "Juguete masticable en forma de hueso",
+        "image": "ruta/imagen2.jpg",
+        "price": 12.49
+      },
+      {
+        "id": 3,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 4,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 5,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 6,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 7,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 8,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 9,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      },
+      {
+        "id": 10,
+        "name": "Pelota de goma resistente",
+        "image": "ruta/imagen1.jpg",
+        "price": 9.99
+      }
+    ],
+    "productosAlimentos": [
+       { "id": 1,
+        "name": "Comida premium para cachorros",
+        "image": "ruta/imagen2.jpg",
+        "price": 19.99
+         },
+         { "id": 2,
+         "name": "Snacks saludables",
+         "image": "ruta/imagen2.jpg",
+         "price": 5.2
+         },
+         { "id": 3,
+        "name": "Comida premium para cachorros",
+        "image": "ruta/imagen2.jpg",
+        "price": 19.99
+        },   
+        { "id": 4,
+        "name": "Comida premium para cachorros",
+        "image": "ruta/imagen2.jpg",
+        "price": 19.99
+        },
+        { "id": 5,
+       "name": "Comida premium para cachorros",
+       "image": "ruta/imagen2.jpg",
+       "price": 19.99
+       },
+       { "id": 6,
+       "name": "Comida premium para cachorros",
+       "image": "ruta/imagen2.jpg",
+       "price": 19.99
+       },
+          { "id": 7,
+       "name": "Comida premium para cachorros",
+       "image": "ruta/imagen2.jpg",
+       "price": 19.99
+        },
+       { "id": 8,
+       "name": "Comida premium para cachorros",
+        "image": "ruta/imagen2.jpg",
+       "price": 19.99
+       },
+       { "id": 9,
+       "name": "Comida premium para cachorros",
+          "image": "ruta/imagen2.jpg",
+       "price": 19.99
+       },
+       { "id": 10,
+       "name": "Comida premium para cachorros",
+       "image": "ruta/imagen2.jpg",
+       "price": 19.99
+       }
+
+       
+      ]
+    }
+
+    
+  
+  
