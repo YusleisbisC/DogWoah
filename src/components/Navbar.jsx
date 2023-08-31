@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import './nav.css';
 import { SearchModal } from './SearchModal';
 
+
 export const Navbar = () => {
   const navigate = useNavigate();
   const [showSearchModal, setShowSearchModal] = useState(false);

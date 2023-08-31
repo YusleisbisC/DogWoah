@@ -1,42 +1,32 @@
 /* Slideshow.css */
 
-/* Estilo para el contenedor del carousel */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    max-height: max-content;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo para las imágenes dentro del carousel */
-  .carousel img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Estilo para los puntos indicadores del carousel (si los utilizas) */
-  .carousel .control-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Estilo para los puntos indicadores individuales */
-  .carousel .control-dots .dot {
-    background-color: #ccc;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin: 0 4px;
-    cursor: pointer;
-  }
-  
-  /* Estilo para el punto indicador activo */
-  .carousel .control-dots .dot.selected {
-    background-color: #333;
-  }
- 
-  
+/* Estilo para el carrusel en sí */
+.carousel {
+  background-color: #f8f8f8; /* Cambia el color de fondo según tu preferencia */
+}
+
+/* Estilo para las imágenes en el carrusel */
+.carousel-item img {
+  width: 100%; /* Asegura que las imágenes se ajusten al ancho del carrusel */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+/* Estilo para los captions de las diapositivas */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los captions */
+  color: #bd2626; /* Color del texto en los captions */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 20px; /* Espacio interno alrededor del caption */
+}
+
+/* Estilo para el texto del caption h3 */
+.carousel-caption h3 {
+  font-size: 24px; /* Tamaño de fuente para el título */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Estilo para el texto del caption p */
+.carousel-caption p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  margin: 0; /* Elimina el margen predeterminado */
+}

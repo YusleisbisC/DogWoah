@@ -1,12 +1,5 @@
 /* Estilos para el contenedor del Navbar */
-nav {
-  background-color: #7c3838;
-  color: rgb(59, 54, 54);
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Agrega margen inferior para separar el área de carrito */
 
-}
 
 
 /* Estilos para el logotipo del Navbar */
@@ -17,6 +10,7 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
+  padding: 25px;
 }
 
 /* Estilos para los enlaces del Navbar */

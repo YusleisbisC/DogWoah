@@ -10,6 +10,8 @@ export const Footer = () => {
         <div className="footer-logo">
           <h1 className="logo-text">DOGWOAH</h1>
         </div>
+
+        
         <div className="footer-links">
           <ul>
             <li><a href="/" className="footer-link">Home</a></li>

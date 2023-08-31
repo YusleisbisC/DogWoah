@@ -7,20 +7,28 @@ import { DestacadosSection } from './DestacadosSection';
 
 
 
+
 export const HomePage = () => {
   return (
 
     
-    <div>
+    <div >
+  <div >
   <Navbar />
+  </div>
   <div className="slideshow-container">
     <Slideshow />
+  </div>
+  <div className='container'>
+  
   </div>
   <div className="content">
    <DestacadosSection/>
   </div>
+  <div>
   <Footer />
-</div>
+  </div>
+  </div>
 
   );
 };
