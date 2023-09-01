@@ -8,7 +8,7 @@ const productosDestacados = [
     id: 1,
     nombre: 'Producto 1',
     precio: 19.99,
-    imagen: 'ruta/imagen1.jpg',
+    imagen: 'src/components/imagenes/cepillo.jpg',
     categoria: 'baño',
   },
   {
@@ -21,7 +21,7 @@ const productosDestacados = [
 
   {
     id: 2,
-    nombre: 'Producto 2',
+    nombre: 'Producto 3',
     precio: 24.99,
     imagen: 'ruta/imagen2.jpg',
     categoria: 'alimentos',
@@ -29,7 +29,7 @@ const productosDestacados = [
 
   {
     id: 2,
-    nombre: 'Producto 2',
+    nombre: 'Producto 4',
     precio: 24.99,
     imagen: 'ruta/imagen2.jpg',
     categoria: 'alimentos',
