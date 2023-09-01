@@ -14,7 +14,7 @@
 /* Estilo para los captions de las diapositivas */
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los captions */
-  color: #bd2626; /* Color del texto en los captions */
+  color: #ebe5e5; /* Color del texto en los captions */
   text-align: center; /* Alinea el texto al centro */
   padding: 20px; /* Espacio interno alrededor del caption */
 }
