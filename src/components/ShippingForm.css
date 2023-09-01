@@ -39,6 +39,7 @@
     width: 280px;
     transform-style: preserve-3d; /* Activa 3D para el efecto */
     transform-origin: center; 
+    margin-bottom: 35px;
     /* Punto de origen de la rotación */
   }
   
@@ -69,10 +70,11 @@
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
   }
   
   .shipping-message h3 {
-    color: #0c0c0c;
+    color: #0d0d0e;
     font-size: 24px;
     margin-bottom: 10px;
   }
