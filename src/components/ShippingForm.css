@@ -60,27 +60,30 @@
     color: #0c0a0a;
     
   }
- .shipping-message {
-    margin-top: 40px;
-    color: #050303;
-    font-weight:lighter; /* Cambia el color del texto si es necesario */
+  
+/*Mudando os estilos h3 e paragrafo de envios*/
+  .shipping-message {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .shipping-message h3 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-weight:bold;
-    color: #161a1b;
+    color: #0c0c0c;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .shipping-message p {
+    color: #1b1919;
     font-size: 16px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding: 15px;
+    line-height: 1.5;
   }
-.shipping-icon{
+  
+  .shipping-icon{
     padding-top: 20px;
     
 }
