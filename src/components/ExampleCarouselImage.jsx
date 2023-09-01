@@ -10,4 +10,4 @@ export const ExampleCarouselImage = ({ imageUrl, altText }) => {
   );
 };
 
-
+//Agregar mas imagenes, por favor

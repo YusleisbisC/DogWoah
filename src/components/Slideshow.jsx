@@ -1,10 +1,9 @@
 
-import './Slideshow.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { ExampleCarouselImage } from './ExampleCarouselImage';
-
+import './Slideshow.css';
 
 
 

@@ -43,6 +43,8 @@ export const DestacadosSection = () => {
                 onClick={() => togglePreviewModal(producto)}
               />
             </Link>
+            
+            
 
             
             <h3>{producto.nombre}</h3>
