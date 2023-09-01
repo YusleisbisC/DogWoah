@@ -1,26 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import './AlimentosPage.css';
 
-
-const products = [
-  {
-    id: 1,
-    name: 'Comida premium para cachorros',
-    image: 'imagenes/comida-1.jpg',
-    price: 19.99,
-  },
-  {
-    id: 2,
-    name: 'Snacks saludables',
-    image: 'imagenes/snacks.jpg',
-    price: 5.99,
-  },
-  // Agrega más productos aquí
-];
-
 export const AlimentosPage = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Realiza una solicitud GET a tu servidor JSON para obtener los productos
+    fetch('http://localhost:4000/productos')
+      .then((response) => response.json())
+      .then((data) => setProducts(data)
+      )
+      .catch((error) => {
+        console.error('Error al obtener productos', error);
+      });
+  }, [setProducts]);
+
   return (
     <div>
       <Navbar />
@@ -32,7 +28,7 @@ export const AlimentosPage = () => {
 
       {/* Lista de productos */}
       <div className="product-list">
-        {products.map((product) => (
+        {products.filter(p => p.categoria === "baño" ).map((product) => (
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>

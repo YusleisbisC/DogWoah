@@ -1,52 +1,57 @@
 /* ProductForm.css */
-.container {
-    max-width: 800px; /* El ancho máximo deseado para tu contenedor */
-    margin-top: 40px;/* Centrar horizontalmente el contenedor */
-    padding: 20px; /* Espacio de relleno interior del contenedor */
-    background-color: #fff; /* Color de fondo del contenedor */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
-    border-radius: 4px; /* Bordes redondeados */
-    margin-bottom: 40px;
 
-  }
-/* Contenedor del formulario */
-.product-form-container {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    margin-bottom: 30px;
-  }
-  
-  /* Etiquetas de los campos */
-  .product-form-container label {
-    font-weight: bold;
-  }
-  
-  /* Campos de entrada de texto */
-  .product-form-container input[type="text"],
-  .product-form-container input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Botón de envío */
-  .product-form-container button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .product-form-container button[type="submit"]:hover {
-    background-color: #0056b3;
+/* Estilo para el contenedor principal */
+.container {
+  text-align: center; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+  background-color: #f4f4f4; /* Color de fondo */
+}
+
+/* Estilo para el título principal */
+.main-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+/* Estilo para la lista de productos */
+.product-list {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0;
+}
+
+/* Estilo para cada elemento de la lista de productos */
+.product-item {
+  background-color: #fff; /* Fondo blanco */
+  border: 1px solid #ddd; /* Borde gris */
+  padding: 10px;
+  margin-bottom: 10px; /* Espacio inferior entre productos */
+}
+
+/* Estilo para los campos de entrada y el botón */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Estilo para el botón */
+.submit-button {
+  background-color: #007bff; /* Color de fondo azul */
+  color: #fff; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Estilo para el mensaje de confirmación */
+.confirmation-message {
+  font-size: 16px;
+  color: green; /* Color de texto verde para mensajes de éxito */
+  margin-top: 10px;
 }

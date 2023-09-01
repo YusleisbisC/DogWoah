@@ -18,6 +18,22 @@ const productosDestacados = [
     imagen: 'ruta/imagen2.jpg',
     categoria: 'alimentos',
   },
+
+  {
+    id: 2,
+    nombre: 'Producto 2',
+    precio: 24.99,
+    imagen: 'ruta/imagen2.jpg',
+    categoria: 'alimentos',
+  },
+
+  {
+    id: 2,
+    nombre: 'Producto 2',
+    precio: 24.99,
+    imagen: 'ruta/imagen2.jpg',
+    categoria: 'alimentos',
+  },
   // Agrega más productos destacados aquí con categorías diferentes
 ];
 
