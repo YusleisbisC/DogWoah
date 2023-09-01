@@ -9,6 +9,11 @@ export const Footer = () => {
       <div className="footer-content">
         <div className="footer-logo">
           <h1 className="logo-text">DOGWOAH</h1>
+            <ul>
+              <li><a href= "https://www.royalcanin.com/br/dogs/breeds/breed-library?gclid=CjwKCAjwxaanBhBQEiwA84TVXNm8d05BoG5c7PafFpWSKEXDoYqjfiPOPqny2MLwFuo-iX-EWGe0rRoCTXwQAvD_BwE" class="footer-link">Cachorros</a></li>
+              <li><a href="https://www.buddytoys.com.br/blog/cinco-curiosidades-sobre-caes/?gclid=CjwKCAjwxaanBhBQEiwA84TVXBgwGFBzkoO8-7QpxuruhWUR-IjyDwHeMLLManC0UtEKSXpOX4y_EhoCnCcQAvD_BwE" class="footer-link">Curiosidades</a></li>
+              <li><a href="https://blog.cobasi.com.br/cuidados-com-cachorros-10-dicas-de-saude/" class="footer-link">Cuidados</a></li>
+            </ul>
         </div>
         <div className="footer-links">
           <ul>
