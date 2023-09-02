@@ -45,6 +45,9 @@ export const Navbar = () => {
               Produtos
               <ul className={`categories-menu ${showCategoriesMenu ? 'show' : ''}`}>
                 
+              <li className='baño-li'>
+                  <Link to="ProductList">Lista de Produtos</Link>
+                </li>
                 <li className='baño-li'>
                   <Link to="/produtos/Baño">Baño</Link>
                 </li>
