@@ -25,6 +25,9 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="footer-social">
+          <div>
+            <h4>Deseas contactarnos?</h4>
+          </div>
             <a href="#"><i className="fab fa-facebook"></i></a>
             <a href="#"><i className="fab fa-whatsapp"></i></a> 
             <a href="#"><i className="fab fa-instagram"></i></a>
