@@ -6,6 +6,9 @@ import {CartPage }from "./components/CartPage";
 import { BañoPage } from "./components/BañoPage";
 import { AlimentosPage } from "./components/AlimentosPage";
 import { BrinquedosPage } from "./components/BrinquedosPage";
+import { ProductList } from "./components/ProductList";
+
+
 
 
 
@@ -40,6 +43,11 @@ export const router = createBrowserRouter([
   {
     path: "/produtos/Brinquedos",
     element: <BrinquedosPage/>,
+
+  },
+  {
+    path: "ProductList",
+    element: <ProductList/>,
 
   },
   
