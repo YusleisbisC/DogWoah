@@ -5,7 +5,7 @@
     {
       "id": 1,
       "name": "Champú para cachorros",
-      "image": "src/components/imagenes/champu-1.jpg",
+      "image": "/assets/champu-1.jpg",
       "price": 12.99,
       "categoria": "baño"
     },

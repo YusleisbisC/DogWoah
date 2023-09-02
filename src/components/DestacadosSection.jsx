@@ -1,50 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import './DestacadosSection.css';
 
-const productosDestacados = [
-  {
-    id: 1,
-    nombre: 'Producto 1',
-    precio: 19.99,
-    imagen: 'src/components/imagenes/cepillo.jpg',
-    categoria: 'baño',
-  },
-  {
-    id: 2,
-    nombre: 'Producto 2',
-    precio: 24.99,
-    imagen: 'ruta/imagen2.jpg',
-    categoria: 'alimentos',
-  },
-
-  {
-    id: 2,
-    nombre: 'Producto 3',
-    precio: 24.99,
-    imagen: 'ruta/imagen2.jpg',
-    categoria: 'alimentos',
-  },
-
-  {
-    id: 2,
-    nombre: 'Producto 4',
-    precio: 24.99,
-    imagen: 'ruta/imagen2.jpg',
-    categoria: 'alimentos',
-  },
-  // Agrega más productos destacados aquí con categorías diferentes
-];
-
 export const DestacadosSection = () => {
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [productosDestacados, setProductosDestacados] = useState([]); // Aquí almacenaremos los productos destacados
 
   const togglePreviewModal = (product) => {
     setSelectedProduct(product);
     setShowPreviewModal(!showPreviewModal);
   };
+
+  useEffect(() => {
+    // Realiza una solicitud GET para obtener los productos destacados
+    fetch('http://localhost:4000/productos') // Reemplaza 'URL_DEL_API_PARA_PRODUCTOS_DESTACADOS' con la URL de tu servidor
+      .then((response) => response.json())
+      .then((data) => setProductosDestacados(data))
+      .catch((error) => {
+        console.error('Error al obtener productos destacados', error);
+      });
+  }, []);
 
   return (
     <section className="destacados-section">
@@ -59,29 +36,31 @@ export const DestacadosSection = () => {
                 onClick={() => togglePreviewModal(producto)}
               />
             </Link>
-            
-            
 
-            
             <h3>{producto.nombre}</h3>
             <button onClick={() => togglePreviewModal(producto)}>
-            Vista prévia
+              Vista prévia
             </button>
           </div>
         ))}
       </div>
 
-      <Modal show={showPreviewModal} onHide={togglePreviewModal}>
-        {selectedProduct && (
-          <div className="preview-modal">
-            <img src={selectedProduct.imagen} alt={selectedProduct.nombre} />
-            <h3>{selectedProduct.nombre}</h3>
-            <p>Preço: ${selectedProduct.precio.toFixed(2)}</p>
-            <p>Quantidade desejada: <input type="number" /></p>
-            <button>Adicionar ao carrinho</button>
-          </div>
-        )}
-      </Modal>
+     <Modal show={showPreviewModal} onHide={togglePreviewModal}>
+  {selectedProduct && (
+    <div className="preview-modal">
+      <img src={selectedProduct.imagen} alt={selectedProduct.nombre} />
+      <h3>{selectedProduct.nombre}</h3>
+      {selectedProduct.precio !== undefined ? (
+        <p>Preço: ${selectedProduct.precio.toFixed(2)}</p>
+      ) : (
+        <p>Precio no disponible</p>
+      )}
+      <p>Quantidade desejada: <input type="number" /></p>
+      <button>Adicionar ao carrinho</button>
+    </div>
+  )}
+</Modal>
+
     </section>
   );
 };
