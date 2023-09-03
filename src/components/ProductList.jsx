@@ -1,12 +1,12 @@
 // ProductList.js
-
+import { Navbar } from './Navbar';
+import { Footer } from './Footer';
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { AddProductModal } from './AddProductModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
-import { Navbar } from './Navbar';
-import { Footer } from './Footer';
+
 
 // Verificación de identidad, por ejemplo, si estás autenticado como administrador
 const isAdmin = true; // Cambia esto según tu lógica de autenticación

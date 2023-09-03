@@ -10,7 +10,7 @@ const images = [
     altText: 'Descripción de la imagen 1',
   },
   {
-    imageUrl: 'URL_DE_TU_IMAGEN_2',
+    imageUrl: 'https://media.istockphoto.com/id/1205387879/pt/foto/authentic-portrait-of-4-months-baby-girl-wrapped-in-towel-after-bath.jpg?s=1024x1024&w=is&k=20&c=JGznv92DznTmBqaNxcSWdpOF6N79iNKOYrXAgTY2iZ8=',
     altText: 'Descripción de la imagen 2',
   },
   {

@@ -169,3 +169,21 @@ input[type="text"] {
 }
 
 
+/* Estilos para los iconos de búsqueda, carrito y usuario */
+.search-icon,
+.cart-icon,
+.auth-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
+  color: #a19e9e;
+  transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el ratón por encima de los iconos */
+.search-icon:hover,
+.cart-icon:hover,
+.auth-icon:hover {
+  color: #ff9900;
+}
+

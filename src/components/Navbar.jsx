@@ -1,16 +1,18 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-bootstrap/Modal';
 import './nav.css';
 import { SearchModal } from './SearchModal';
-
+import { Auth } from './Auth'; // Importa el componente de autenticación
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showCategoriesMenu, setShowCategoriesMenu] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false); // Controla la visibilidad del modal de inicio de sesión
 
   const toggleSearchModal = () => {
     setShowSearchModal(!showSearchModal);
@@ -24,6 +26,10 @@ export const Navbar = () => {
     setShowCategoriesMenu(!showCategoriesMenu);
   };
 
+  const toggleAuthModal = () => {
+    setShowAuthModal(!showAuthModal); // Abre o cierra el modal de inicio de sesión
+  };
+
   const yourSearchFunction = () => {
     console.log('Realizando búsqueda...');
     toggleSearchModal();
@@ -31,12 +37,12 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        <span className="logo">DogWoah</span>
-      </Link>
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <span className="logo">DogWoah</span>
+        </Link>
 
-      <div className="ml-auto">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link className="nav-link" to="/">Home</Link>
           </li>
@@ -44,8 +50,7 @@ export const Navbar = () => {
             <span className="nav-link" onClick={toggleCategoriesMenu}>
               Produtos
               <ul className={`categories-menu ${showCategoriesMenu ? 'show' : ''}`}>
-                
-              <li className='baño-li'>
+                <li className='baño-li'>
                   <Link to="ProductList">Lista de Produtos</Link>
                 </li>
                 <li className='baño-li'>
@@ -66,18 +71,29 @@ export const Navbar = () => {
           <li className="nav-item">
             <Link className="nav-link" to="/envios">Envíos</Link>
           </li>
+          <li className="nav-item">
+            <div className="search-icon" onClick={toggleSearchModal}>
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="cart-icon" onClick={toggleCartModal}>
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="auth-icon" onClick={toggleAuthModal}>
+              <FontAwesomeIcon icon={faUser} />
+            </div>
+          </li>
         </ul>
       </div>
-      <div className="cart-icon ml-3" onClick={toggleCartModal}>
-        <FontAwesomeIcon icon={faShoppingCart} />
-      </div>
-      <div className="search-icon ml-3" onClick={toggleSearchModal}>
-        <FontAwesomeIcon icon={faSearch} />
-      </div>
-
       <Modal show={showSearchModal} onHide={toggleSearchModal}>
         <SearchModal toggleModal={toggleSearchModal} searchFunction={yourSearchFunction} />
       </Modal>
-    </nav>
-  );
+      <Modal show={showAuthModal} onHide={toggleAuthModal}>
+        <Auth /> {/* Agrega tu componente de inicio de sesión aquí */}
+      </Modal>
+    </nav>
+  );
 };
