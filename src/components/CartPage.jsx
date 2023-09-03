@@ -40,7 +40,7 @@ export const CartPage = () => {
             </div>
           ))}
           <p className="cart-total">Total: {calculateTotal()}</p>
-          <a href="http://localhost:3000/productos" className="continue-shopping">
+          <a href="/ProductList" className="continue-shopping">
             Continuar Comprando
           </a>
         </div>
