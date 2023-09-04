@@ -1,16 +1,13 @@
+
 import React, { useState } from 'react';
 import { auth } from '../firebase'; // Asegúrate de importar la instancia de autenticación adecuada
 import './Auth.css'; // Importa tu archivo de estilos CSS para Auth
- registro-de-usuario
 import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
-
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
- main
 
 export const Auth = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +18,6 @@ export const Auth = () => {
   const [isPasswordIncorrect, setIsPasswordIncorrect] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(true); // Variable de estado para validar el correo
 
- registro-de-usuario
   const isPasswordValid = password.length >= 6; // Verifica si la contraseña es válida (puedes personalizar esto)
 
   const handleSignUpWithEmailPassword = async () => {
@@ -34,21 +30,6 @@ export const Auth = () => {
       }
 
       await createUserWithEmailAndPassword(auth, email, password);
-
-  const handleSignInWithGoogle = async () => {
-    const result = await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    try {
-      // Maneja el inicio de sesión exitoso aquí
-    } catch (error) {
-      console.error(error);  
-    }
-  };
-
-  const handleSignUpWithEmailPassword = async () => {
-    try {
-      const result = await createUserWithEmailAndPassword(auth, email, password); // Cambio en esta línea
-      // Maneja el registro exitoso aquí
-
     } catch (error) {
       console.error(error);
     } finally {
@@ -58,7 +39,6 @@ export const Auth = () => {
 
   const handleSignInWithEmailPassword = async () => {
     try {
- registro-de-usuario
       setIsLoading(true);
 
       if (!isEmailValid || !isPasswordValid) {
@@ -67,9 +47,6 @@ export const Auth = () => {
       }
 
       await signInWithEmailAndPassword(auth, email, password);
-
-      const result = await signInWithEmailAndPassword(auth, email, password); // Cambio en esta línea
-      // Maneja el inicio de sesión exitoso aquí main
     } catch (error) {
       console.error(error);
 
@@ -179,14 +156,6 @@ export const Auth = () => {
           )}
         </>
       )}
- registro-de-usuario
-    </div>
-  );
-};
-
-
-
     </div>
   );
 };
- main

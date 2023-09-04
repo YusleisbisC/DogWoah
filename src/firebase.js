@@ -23,8 +23,7 @@ export const analytics = getAnalytics(app);
 
 
 
-registro-de-usuario
+
 export default firebaseConfig;
 
-export default firebaseConfig;
- main
+
