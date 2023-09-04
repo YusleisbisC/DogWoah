@@ -1,26 +1,26 @@
-
 import React, { useState } from 'react';
 import { auth, firebase } from '../firebase'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import './Auth.css'; // Importa tu archivo de estilos CSS para Auth
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 export const Auth = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignInWithGoogle = async () => {
+    const result = await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     try {
-      const result = await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       // Maneja el inicio de sesión exitoso aquí
     } catch (error) {
-      console.error(error);
+      console.error(error);  
     }
   };
 
   const handleSignUpWithEmailPassword = async () => {
     try {
-      const result = await auth.createUserWithEmailAndPassword(email, password);
+      const result = await createUserWithEmailAndPassword(auth, email, password); // Cambio en esta línea
       // Maneja el registro exitoso aquí
     } catch (error) {
       console.error(error);
@@ -29,7 +29,7 @@ export const Auth = () => {
 
   const handleSignInWithEmailPassword = async () => {
     try {
-      const result = await auth.signInWithEmailAndPassword(email, password);
+      const result = await signInWithEmailAndPassword(auth, email, password); // Cambio en esta línea
       // Maneja el inicio de sesión exitoso aquí
     } catch (error) {
       console.error(error);
