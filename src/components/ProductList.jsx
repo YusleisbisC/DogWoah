@@ -6,13 +6,36 @@ import Button from 'react-bootstrap/Button';
 import { AddProductModal } from './AddProductModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { auth } from '../firebase';
 
 
 // Verificación de identidad, por ejemplo, si estás autenticado como administrador
-const isAdmin = true; // Cambia esto según tu lógica de autenticación
+ // Cambia esto según tu lógica de autenticación
 
 export const ProductList = () => {
   const [showModal, setShowModal] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false)
+
+
+
+useEffect(() => {
+  const user = auth.currentUser;
+  console.log(user)
+  if (user) {
+    
+    console.log("usuario", user.uid);
+    if (user.uid === "u1eBSrG3padEmsMnfrkuV0o9MmX2" ) {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    }
+  } else {
+    // El usuario no está autenticado, puedes manejar esto de acuerdo a tus necesidades.
+  }
+}, [setIsAdmin]);
+
+
+
 
   const handleShowModal = () => {
     setShowModal(true);

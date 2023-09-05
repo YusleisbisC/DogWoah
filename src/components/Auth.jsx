@@ -80,7 +80,7 @@ export const Auth = () => {
   };
 
   const user = auth.currentUser;
-
+  console.log(user)
   return (
     <div className="auth-container">
       {isLoading ? (
