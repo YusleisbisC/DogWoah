@@ -6,7 +6,9 @@ import {CartPage }from "./components/CartPage";
 import { BañoPage } from "./components/BañoPage";
 import { AlimentosPage } from "./components/AlimentosPage";
 import { BrinquedosPage } from "./components/BrinquedosPage";
-import { ProductList } from "./components/ProductList";
+import { Productos } from "./components/Produtos";
+import { AdminNavbar } from "./components/AdminNav";
+
 
 
 
@@ -18,10 +20,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <HomePage />,
   },
-  {
-    path: "/produtos/Baño",
-    element: <BañoPage />,
-  },
+
   {
     path: "/contact",
     element: <Contact />,
@@ -35,6 +34,12 @@ export const router = createBrowserRouter([
     element: <CartPage />,
 
   },
+
+  {
+    path: "/Productos",
+    element: <Productos/>,
+
+  },
   {
     path: "/produtos/Alimentos",
     element: <AlimentosPage />,
@@ -46,11 +51,16 @@ export const router = createBrowserRouter([
 
   },
   {
-    path: "/ProductList",
-    element: <ProductList/>,
-
+    path: "/produtos/Baño",
+    element: <BañoPage />,
   },
+  {
+    path: "/AdminNavbar",
+    element: <AdminNavbar/>,
+  },
+ 
   
+
   
   
 ]);

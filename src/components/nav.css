@@ -1,5 +1,3 @@
-
-
 /* Estilos para el logotipo del Navbar */
 .navbar-brand {
   font-size: 24px;
@@ -98,9 +96,6 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-
-
-
 /* Media query para pantallas de hasta 450px de ancho */
 @media (max-width: 450px) {
   /* Cambia la dirección de la disposición a vertical */
@@ -178,6 +173,8 @@ input[type="text"] {
   margin-right: 20px;
   color: #a19e9e;
   transition: color 0.3s;
+  margin-top: 10px;
+  border: 1px solid red;
 }
 
 /* Cambio de color al pasar el ratón por encima de los iconos */
