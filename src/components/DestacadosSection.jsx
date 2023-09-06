@@ -14,14 +14,15 @@ export const DestacadosSection = () => {
   };
 
   useEffect(() => {
-    // Realiza una solicitud GET para obtener los productos destacados
-    fetch("http://localhost:4000/productos") // Reemplaza 'URL_DEL_API_PARA_PRODUCTOS_DESTACADOS' con la URL de tu servidor
+    // Realiza una solicitud GET para obtener los 10 primeros productos destacados
+    fetch("http://localhost:4000/productos?_limit=10") // Agrega el parámetro _limit=10 para limitar a 10 productos
       .then((response) => response.json())
       .then((data) => setProductosDestacados(data))
       .catch((error) => {
         console.error("Error al obtener productos destacados", error);
       });
   }, []);
+  
 
   return (
     <section className="destacados-section">

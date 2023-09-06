@@ -35,9 +35,7 @@ export const Navbar = () => {
 
   const toggleAuthModal = () => {
     setShowAuthModal(!showAuthModal);
-    <Modal show={showAuthModal} onHide={toggleAuthModal}>
-        <Auth /> {/* Agrega tu componente de inicio de sesión aquí */}
-      </Modal> // Abre o cierra el modal de inicio de sesión
+   
   };
 
   
@@ -45,10 +43,11 @@ export const Navbar = () => {
     try {
       await signOut(auth); // Cierra la sesión del usuario
       setShowAuthModal(false); // Cierra el modal de inicio de sesión
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       console.error('Error al cerrar sesión:', error);
     }
+    
   };
 
   return (
@@ -74,27 +73,27 @@ export const Navbar = () => {
           <Link className="navbar-brand" to="/">
             <span className="logo">DogWoah</span>
           </Link>
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav ml-auto" >
             <li className="nav-item">
               <Link className="nav-link" to="/AdminNavbar/">Administrador</Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" >
               <Link className="nav-link" to="/">Home</Link>
             </li>
-            <li className="nav-item">
-              <Dropdown show={showCategoriesMenu} onToggle={toggleCategoriesMenu}>
+            <li className="nav-item"  >
+              <Dropdown  show={showCategoriesMenu} onToggle={toggleCategoriesMenu} >
                 <Dropdown.Toggle as="span" className="nav-link">
-                  <Link to="/productos/">Produtos</Link>
+                  <Link style={{textDecoration:"none"}}  to="/productos/">Produtos</Link >
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item>
-                    <Link to="/produtos/Baño">Baño</Link>
+                  <Dropdown.Item className="nav-link">
+                    <Link style={{textDecoration:"none"}} to="/produtos/Baño">Baño</Link>
                   </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link to="/produtos/Alimentos">Alimentos</Link>
+                  <Dropdown.Item className="nav-link">
+                    <Link style={{textDecoration:"none"}} to="/produtos/Alimentos">Alimentos</Link>
                   </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link to="/produtos/Brinquedos">Brinquedos</Link>
+                  <Dropdown.Item className="nav-link">
+                    <Link  style={{textDecoration:"none"}} to="/produtos/Brinquedos">Brinquedos</Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
