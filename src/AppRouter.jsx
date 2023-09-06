@@ -8,6 +8,7 @@ import { AlimentosPage } from "./components/AlimentosPage";
 import { BrinquedosPage } from "./components/BrinquedosPage";
 import { Productos } from "./components/Produtos";
 import { AdminNavbar } from "./components/AdminNav";
+import { Auth } from "./components/Auth";
 
 
 
@@ -58,6 +59,11 @@ export const router = createBrowserRouter([
     path: "/AdminNavbar",
     element: <AdminNavbar/>,
   },
+  {
+    path: "/Auth",
+    element: <Auth/>,
+  },
+ 
  
   
 
