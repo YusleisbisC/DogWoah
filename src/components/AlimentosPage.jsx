@@ -8,7 +8,7 @@ export const AlimentosPage = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET a tu servidor JSON para obtener los productos
-    fetch('http://localhost:4000/productos')
+    fetch("http://127.0.0.1:8000/api/productsupdate/")
       .then((response) => response.json())
       .then((data) => setProducts(data)
       )

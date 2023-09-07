@@ -15,7 +15,7 @@ export const DestacadosSection = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET para obtener los 10 primeros productos destacados
-    fetch("http://localhost:4000/productos?_limit=10") // Agrega el parámetro _limit=10 para limitar a 10 productos
+    fetch("http://127.0.0.1:8000/api/productsupdate/") // Agrega el parámetro _limit=10 para limitar a 10 productos
       .then((response) => response.json())
       .then((data) => setProductosDestacados(data))
       .catch((error) => {

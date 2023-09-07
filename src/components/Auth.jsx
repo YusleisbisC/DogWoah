@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { auth } from '../firebase'; // Asegúrate de importar la instancia de autenticación adecuada
 import './Auth.css'; // Importa tu archivo de estilos CSS para Auth
@@ -8,12 +7,8 @@ import {
   createUserWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-
 
 export const Auth = () => {
-  const navigate = useNavigate();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -69,14 +64,12 @@ export const Auth = () => {
     try {
       setIsLoading(true);
       await signOut(auth);
-      navigate('/'); // Redirige al usuario a la página de inicio (ajusta la ruta según tu configuración)
     } catch (error) {
       console.error(error);
     } finally {
       setIsLoading(false);
     }
   };
-  
 
   // Función para validar el correo electrónico
   const validateEmail = (email) => {
@@ -86,7 +79,7 @@ export const Auth = () => {
   };
 
   const user = auth.currentUser;
-  console.log(user)
+
   return (
     <div className="auth-container">
       {isLoading ? (

@@ -7,24 +7,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../firebase';
 import { AdminNav } from './AdminNav';
- // Importa el componente AdminNav
 
 export const Registro = () => {
   const [showModal, setShowModal] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
 
   useEffect(() => {
     const user = auth.currentUser;
     console.log(user);
     if (user) {
       console.log("usuario", user.uid);
-      if (user.uid === "u1eBSrG3padEmsMnfrkuV0o9MmX2") {
+      if (user.uid === "u1eBSrG3padEmsMnfrkuV0o9MmX2" || user.uid === "kT1vMgwwiPdJLDXFN8nFvrausKw2") {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);
       }
+      setUserAuthenticated(true); // Marcar al usuario como autenticado
     } else {
       // El usuario no está autenticado, puedes manejar esto de acuerdo a tus necesidades.
+      setIsAdmin(false); // Asegúrate de que isAdmin sea falso si el usuario no está autenticado
+      setUserAuthenticated(false);
     }
   }, [setIsAdmin]);
 
@@ -49,7 +52,7 @@ export const Registro = () => {
         <h2>Aqui encontraras el listado completo de tus productos favoritos</h2>
 
         {/* Botón de "Agregar Producto" con icono de patita de cachorro */}
-        {isAdmin && ( // Muestra el botón solo si isAdmin es true
+        {userAuthenticated && isAdmin && ( // Mostrar solo si el usuario está autenticado y es un administrador
           <Button id="agregar-producto-btn" variant="primary" onClick={handleShowModal}>
             <FontAwesomeIcon icon={faPaw} />
           </Button>
@@ -59,7 +62,7 @@ export const Registro = () => {
         <AddProductModal show={showModal} onHide={handleCloseModal} onSubmit={handleAddProduct} />
 
         {/* Muestra AdminNav solo si el usuario es un administrador autenticado */}
-        {isAdmin && <AdminNav />}
+        {userAuthenticated && isAdmin && <AdminNav />}
       </div>
       <Footer />
     </div>
