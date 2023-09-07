@@ -1,4 +1,3 @@
-/*
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
 import { ShippingForm } from "./components/ShippingForm";
@@ -66,5 +65,3 @@ export const router = createBrowserRouter([
   
   
 ]);
-
-*/
