@@ -6,7 +6,6 @@ import { AddProductModal } from './AddProductModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../firebase';
-import { AdminNav } from './AdminNav';
 
 export const Registro = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,21 +14,18 @@ export const Registro = () => {
 
   useEffect(() => {
     const user = auth.currentUser;
-    console.log(user);
     if (user) {
-      console.log("usuario", user.uid);
       if (user.uid === "u1eBSrG3padEmsMnfrkuV0o9MmX2" || user.uid === "kT1vMgwwiPdJLDXFN8nFvrausKw2") {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);
       }
-      setUserAuthenticated(true); // Marcar al usuario como autenticado
+      setUserAuthenticated(true);
     } else {
-      // El usuario no está autenticado, puedes manejar esto de acuerdo a tus necesidades.
-      setIsAdmin(false); // Asegúrate de que isAdmin sea falso si el usuario no está autenticado
+      setIsAdmin(false);
       setUserAuthenticated(false);
     }
-  }, [setIsAdmin]);
+  }, []);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -49,20 +45,17 @@ export const Registro = () => {
     <div>
       <Navbar />
       <div className="container">
-        <h2>Aqui encontraras el listado completo de tus productos favoritos</h2>
+        <h2>Aquí encontrarás el listado completo de tus productos favoritos</h2>
 
         {/* Botón de "Agregar Producto" con icono de patita de cachorro */}
-        {userAuthenticated && isAdmin && ( // Mostrar solo si el usuario está autenticado y es un administrador
+        {userAuthenticated && isAdmin && (
           <Button id="agregar-producto-btn" variant="primary" onClick={handleShowModal}>
-            <FontAwesomeIcon icon={faPaw} />
+            <FontAwesomeIcon icon={faPaw} /> Agregar Producto
           </Button>
         )}
 
         {/* Resto de tu componente de lista de productos */}
         <AddProductModal show={showModal} onHide={handleCloseModal} onSubmit={handleAddProduct} />
-
-        {/* Muestra AdminNav solo si el usuario es un administrador autenticado */}
-        {userAuthenticated && isAdmin && <AdminNav />}
       </div>
       <Footer />
     </div>

@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
 import './SearchModal.css';
+import { useNavigate } from 'react-router-dom';
 
-export const SearchModal = ({ toggleModal, searchFunction }) => {
+export const SearchModal = ({ toggleModal }) => {
   const [searchText, setSearchText] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [noResults, setNoResults] = useState(false);
+  const navigate = useNavigate(); // Obtén la función de navegación de React Router
 
   const handleSearch = () => {
-    const results = searchFunction(searchText);
-
-    if (Array.isArray(results) && results.length === 0) {
-      setNoResults(true);
-      setSearchResults([]); // Limpiar los resultados si no hay ninguno
-    } else {
-      setSearchResults(results);
-      setNoResults(false);
-    }
+    // Realiza la búsqueda y navega a la URL con los parámetros de búsqueda
+    const queryParams = new URLSearchParams();
+    queryParams.set('search', searchText);
+    navigate(`/productos?${queryParams.toString()}`);
+    toggleModal(); // Cierra el modal después de realizar la búsqueda
   };
 
   return (
     <div className="search-modal">
       <div className="search-modal-content">
-        <h2>Pesquisar</h2>
+        <h2>Buscar</h2>
         <input
           type="text"
           placeholder="Buscar"
@@ -29,24 +25,12 @@ export const SearchModal = ({ toggleModal, searchFunction }) => {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button className="search-button" onClick={handleSearch}>
-          Pesquisar
+          Buscar
         </button>
         <button className="close-button" onClick={toggleModal}>
-          Fechar
+          Cerrar
         </button>
-
-        {noResults ? (
-          <p>No hubo resultados para tu búsqueda.</p>
-        ) : (
-          <div>
-            {searchResults?.map((result, index) => (
-              <p key={index}>{result}</p>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
 };
-
-
