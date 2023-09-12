@@ -12,6 +12,7 @@ import BrinquedosDetails from "./components/details/BrinquedosDetails";
 import { AdminProducts } from "./components/admin/produtcs/AdminProducts";
 import { CartProvider, useCart } from "react-use-cart";
 import { Productos } from "./components/Produtos";
+import { FinishPage } from "./components/Finish";
 
 export function App() {
   return (
@@ -23,7 +24,7 @@ export function App() {
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/envios" element={<ShippingForm />} />
             <Route exact path="/cart" element={<CartPage />} />
-            
+
             <Route
               exact
               path="/produtos/alimento"
@@ -52,6 +53,7 @@ export function App() {
               element={<AdminProducts />}
             />
             <Route exact path="/produtos" element={<Productos />} />
+            <Route exact path="/finish" element={<FinishPage />} />
           </Routes>
         </Router>
       </CartProvider>
