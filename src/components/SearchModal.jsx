@@ -18,12 +18,15 @@ export const SearchModal = ({ toggleModal }) => {
     <div className="search-modal">
       <div className="search-modal-content">
         <h2>Buscar</h2>
+        {/* Utiliza el estado searchText para el input */}
         <input
           type="text"
-          placeholder="Buscar"
+          placeholder="Buscar receitas"
+          className="input-search"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
+        {/* Agrega un botón de búsqueda que llame a handleSearch */}
         <button className="search-button" onClick={handleSearch}>
           Buscar
         </button>

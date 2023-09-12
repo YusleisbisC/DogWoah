@@ -143,3 +143,46 @@
     
   }
   
+  /* Agrega estilos generales aquí (para todas las pantallas) */
+/* Estilos generales para todas las pantallas */
+/* ... */
+
+/* Estilos para pantallas a partir de 620px de ancho y mayores */
+@media screen and (min-width: 620px) {
+  .footer {
+    /* Agrega los estilos específicos para pantallas de 620px o más */
+    /* Por ejemplo, cambia el fondo y el padding */
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  .footer-links ul {
+    /* Estilos para la lista de enlaces en pantallas de 620px o más */
+    /* Por ejemplo, aumenta el margen superior */
+    margin-top: 20px;
+  }
+
+  .footer-logo h1 {
+    /* Estilos para el logo en pantallas de 620px o más */
+    /* Por ejemplo, cambia el tamaño de la fuente */
+    font-size: 24px;
+  }
+
+  /* Puedes seguir agregando más estilos específicos según tus necesidades */
+
+  .footer-payment {
+    /* Estilos para la sección de formas de pago en pantallas de 620px o más */
+    /* Por ejemplo, cambia el fondo y el padding */
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  /* Agrega más estilos específicos para otras partes del footer si es necesario */
+
+  .footer-bottom p {
+    /* Estilos para el texto de derechos de autor en pantallas de 620px o más */
+    /* Por ejemplo, cambia el tamaño de la fuente */
+    font-size: 16px;
+  }
+}
+

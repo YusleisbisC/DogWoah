@@ -1,10 +1,6 @@
 /* contact.css */
 
-.contact-page {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    
-  }
+
   
   .contact-container {
     background-color: #fff;
@@ -13,6 +9,7 @@
     padding: 20px;
     margin: 20px auto;
     max-width: 600px;
+    
   }
   
   h2 {

@@ -1,0 +1,22 @@
+/* CircularImages.css */
+
+/* Estilo para el contenedor de las imágenes */
+.row.circular-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* Estilo para cada imagen circular */
+  .col.circular-image {
+    width: calc(33.33% - 10px); /* Tamaño deseado de la imagen, con un margen de 10px entre ellas */
+    margin-bottom: 20px; /* Espacio entre las imágenes */
+    text-align: center;
+  }
+  
+  /* Estilo para la imagen en sí */
+  .col.circular-image img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al ancho del contenedor */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+  }
+  
