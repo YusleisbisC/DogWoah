@@ -1,11 +1,11 @@
 /* Estilos para el área del carrito */
 .cart-container {
   background-color: transparent; /* Cambia el fondo a transparente */
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 550px;
+  margin: 40px auto;
 }
 
 /* Estilos para los elementos del carrito */
@@ -30,12 +30,11 @@
   cursor: pointer;
   font-size: 14px;
   margin-top: 5px;
-  
+  list-style: none;
 }
 
 .cart-item button:hover {
   background-color: #c0392b;
-  
 }
 
 /* Estilos para el total del carrito */
@@ -69,5 +68,25 @@
 
 .continue-shopping:hover {
   background-color: #2980b9;
-  
+}
+
+.links-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-container .cart-icon {
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: #a19e9e;
+  margin-left: 0;
+}
+
+.cart-container .cart-icon:hover {
+  color: orange;
+}
+
+.text-cart {
+  font-weight: 600;
+  font-size: 15px;
 }
