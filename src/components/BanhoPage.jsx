@@ -19,13 +19,13 @@ export const BanhoPage = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
         if (data && Array.isArray(data)) {
           // Filtrar los productos por categoría "banho"
           const productosBanho = data.filter(
-            (producto) => producto.categoria === "banho"
+            (producto) => producto.category === "banho"
           );
 
           setProductosBanho(productosBanho);
@@ -51,16 +51,16 @@ export const BanhoPage = () => {
       <div className="destacados-list">
         {productosBanho.map((product) => (
           <div key={product.id} className="destacados-card">
-            <Link to={`produtos/${product.categoria}/${product.nome}`}>
+            <Link to={`produtos/${product.category}/${product.nome}`}>
               <img
-                src={product.imagem}
+                src={product.image}
                 alt={product.nome}
                 onClick={() => togglePreviewModal(product)}
                 style={{ height: "190px", width: "230px" }}
               />
             </Link>
 
-            <h3>{product.name}</h3>
+            <h3>{product.nome}</h3>
             <button onClick={() => togglePreviewModal(product)}>
               Vista prévia
             </button>
@@ -70,18 +70,18 @@ export const BanhoPage = () => {
           {selectedProduct && (
             <div className="preview-modal">
               <img
-                src={selectedProduct.imagem}
-                alt={selectedProduct.name}
+                src={selectedProduct.image}
+                alt={selectedProduct.nome}
                 style={{ height: "180px", width: "200px" }}
               />
-              <h3>{selectedProduct.name}</h3>
+              <h3>{selectedProduct.nome}</h3>
               {selectedProduct.price !== undefined ? (
                 <p>Preço: ${selectedProduct.price}</p>
               ) : (
                 <p>Precio no disponible</p>
               )}
               <p>
-                Quantidade desejada: <input type="number" />
+                Quantidade desejada: <input type="number" min="1" />
               </p>
               <button
                 onClick={() =>
@@ -101,5 +101,3 @@ export const BanhoPage = () => {
     </div>
   );
 };
-
-

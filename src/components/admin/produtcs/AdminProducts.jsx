@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,95 +5,120 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "./AdminProducts.css";
 import Modal from "react-bootstrap/Modal";
-import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../Navbar";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export const AdminProducts = () => {
-  const [productosDestacados, setProductosDestacados] = useState([]);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [productos, setProductos] = useState([]);
 
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const navigate = useNavigate();
-
-  const [message, setMessage] = useState("");
-
-  const [inputs, setInputs] = useState([]);
-  const [photo, setPhoto] = useState("");
-
   // Create
-  const [name, setName] = useState("");
+  const [nome, setNome] = useState("");
   const [description, setdescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState("");
+  const [category, setCategory] = useState("Alimento");
+  const [image, setImage] = useState(null);
 
   // Edit
   const [editName, setEditName] = useState("");
   const [editDescription, setEditDescription] = useState("");
   const [editPrice, setEditPrice] = useState("");
-  const [editCategory, setEditCategory] = useState("");
-  const [editImage, setEditImage] = useState("");
+  const [editCategory, setEditCategory] = useState("Alimento");
+  const [editImage, setEditImage] = useState(null);
 
   // Edit
-  const editProduct = async () => {
-    console.log(image);
-    const formData = new FormData();
-    formData.append("_method", "PUT");
-    formData.append("name", editName);
-    formData.append("description", editDescription);
-    formData.append("price", editPrice);
-    formData.append("category", editCategory);
-    formData.append("image", editImage);
-    const responce = await axios.post(
-      "http://127.0.0.1:8000/api/productsupdate/" + selectedProduct.id,
-      formData,
-      {
-        headers: { "Content-Type": "multipart/form-data" },
+  const editProduct = async (id) => {
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${editImage.name}`);
+    await uploadBytes(storageRef, editImage);
+    const downloadURL = await getDownloadURL(storageRef);
+    setEditImage(downloadURL);
+
+    const updatedProductData = {
+      nome: editName,
+      description: editDescription,
+      price: editPrice,
+      category: editCategory,
+      image: downloadURL,
+    };
+
+    try {
+      const response = await fetch(
+        `https://dogwoah-servidor-production.up.railway.app/api/products/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedProductData),
+        }
+      );
+
+      if (response.status === 200) {
+        const updatedProduct = await response.json();
+        console.log("Producto actualizado:", updatedProduct);
+        setProductos((prevProductos) => {
+          const updatedProductos = prevProductos.map((producto) => {
+            if (producto.id === id) {
+              return updatedProduct;
+            } else {
+              return producto;
+            }
+          });
+
+          return updatedProductos;
+        });
+        setShowPreviewModal(false);
+      } else {
+        throw new Error("Producto no encontrado");
       }
-    );
-
-    if (responce) {
-      console.log(responce);
-      setMessage(responce.message); //"message": "Product successfully created."
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+    } catch (error) {
+      console.error("Error al editar el producto:", error.message);
     }
-  };
-
-  const editSubmit = async (e) => {
-    e.preventDefault();
-    await editProduct();
   };
 
   //---------------------------------------
   //Create
   const createProduct = async () => {
-    console.log(image);
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("description", description);
-    formData.append("price", price);
-    formData.append("category", category);
-    formData.append("image", image);
-    const responce = await axios.post(
-      "http://127.0.0.1:8000/api/products",
-      formData,
-      {
-        headers: { "Content-Type": "multipart/form-data" },
-      }
-    );
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${image.name}`);
+    await uploadBytes(storageRef, image);
+    const downloadURL = await getDownloadURL(storageRef);
+    setImage(downloadURL);
 
-    if (responce) {
-      console.log(responce);
-      setMessage(responce.message); //"message": "Product successfully created."
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-    }
+    const product = {
+      nome,
+      description,
+      price,
+      category,
+      image: downloadURL,
+    };
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    };
+
+    fetch(
+      "https://dogwoah-servidor-production.up.railway.app/api/products",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setProductos([data, ...productos]);
+        console.log(product);
+        setShowCreateModal(false);
+      })
+      .catch((error) => {
+        console.error("Error al crear producto:", error);
+      });
   };
 
   const createSubmit = async (e) => {
@@ -103,12 +127,6 @@ export const AdminProducts = () => {
   };
 
   //------------------------------------
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
 
   const togglePreviewModal = (product) => {
     setSelectedProduct(product);
@@ -125,16 +143,10 @@ export const AdminProducts = () => {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
-          setProductosDestacados(data.products);
-        } else {
-          console.error(
-            "La respuesta no contiene un arreglo de productos válidos."
-          );
-        }
+        setProductos(data);
       })
       .catch((error) => {
         console.error("Error al obtener productos destacados", error);
@@ -142,11 +154,25 @@ export const AdminProducts = () => {
   }, []);
 
   const deleteProduct = (id) => {
-    axios
-      .delete("http://127.0.0.1:8000/api/productdelete/" + id)
+    fetch(
+      `https://dogwoah-servidor-production.up.railway.app/api/products/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then(function (response) {
-        console.log(response.data);
-        window.location.reload();
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw new Error("Producto no encontrado");
+        }
+      })
+      .then(function (data) {
+        setProductos(productos.filter((p) => p.id !== id));
+        setShowDeleteModal(false);
+      })
+      .catch(function (error) {
+        console.error(error.message);
       });
   };
 
@@ -161,7 +187,7 @@ export const AdminProducts = () => {
         <button onClick={() => toggleCreateModal()}>Criar Novo Produto</button>
       </div>
       <div style={{ maxHeight: "500px", overflowY: "auto" }}>
-        <table class="table table-striped">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -174,17 +200,17 @@ export const AdminProducts = () => {
             </tr>
           </thead>
           <tbody>
-            {productosDestacados.map((e) => (
+            {productos.reverse().map((e) => (
               <tr key={e.id}>
                 <td>{counter++}</td>
-                <td>{e.name}</td>
+                <td>{e.nome}</td>
                 <td>{e.description}</td>
                 <td>{e.price}</td>
                 <td>{e.category}</td>
                 <td>
                   <img
                     style={{ height: "30px", width: "40px" }}
-                    src={`http://127.0.0.1:8000/storage/${e.image}`}
+                    src={e.image}
                     alt=""
                   />
                 </td>
@@ -209,12 +235,15 @@ export const AdminProducts = () => {
 
         <Modal show={showPreviewModal} onHide={togglePreviewModal}>
           {selectedProduct && (
-            <form onSubmit={editProduct} className="preview-modal">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                editProduct(selectedProduct.id);
+              }}
+              className="preview-modal"
+            >
               <h3>Editar Produto</h3>
-              <img
-                src={`http://127.0.0.1:8000/storage/${selectedProduct.image}`}
-                alt={selectedProduct.name}
-              />
+              <img src={selectedProduct.image} alt={selectedProduct.name} />
 
               <div className="input-container">
                 <div className="input-div">
@@ -290,7 +319,7 @@ export const AdminProducts = () => {
                   className="form-control"
                   type="text"
                   name="name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setNome(e.target.value)}
                   required
                 />
               </div>
