@@ -16,62 +16,32 @@ export const DestacadosSection = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data && Array.isArray(data)) {
-          // Filtrar los productos por categoría
-          const productosBanho = data.filter(
-            (producto) => producto.categoria === "banho"
-          );
-          const productosAlimento = data.filter(
-            (producto) => producto.categoria === "alimento"
-          );
-          const productosBrinquedo = data.filter(
-            (producto) => producto.categoria === "brinquedo"
-          );
-
-          // Seleccionar 10 productos aleatorios de cada categoría
-          const productosDestacados = [
-            ...selectRandomProducts(productosBanho, 5),
-            ...selectRandomProducts(productosAlimento, 5),
-            ...selectRandomProducts(productosBrinquedo, 5),
-          ];
-
-          setProductosDestacados(productosDestacados);
-        } else {
-          console.error(
-            "La respuesta no contiene un arreglo de productos válidos."
-          );
-        }
+        setProductosDestacados(data);
       })
       .catch((error) => {
         console.error("Error al obtener productos destacados", error);
       });
   }, []);
 
-  // Función para seleccionar productos aleatorios de una categoría
-  const selectRandomProducts = (products, count) => {
-    const shuffledProducts = products.sort(() => 0.5 - Math.random());
-    return shuffledProducts.slice(0, count);
-  };
-
   return (
     <section className="destacados-section">
       <h2>Produtos em destaque</h2>
       <div className="destacados-list">
-        {productosDestacados.map((producto) => (
+        {productosDestacados.reverse().map((producto) => (
           <div key={producto.id} className="destacados-card">
-            <Link to={`produtos/${producto.category}/${producto.name}`}>
+            <Link to={`produtos/${producto.category}/${producto.nome}`}>
               <img
-                src={producto.imagem}
+                src={producto.image}
                 alt={producto.nome}
                 onClick={() => togglePreviewModal(producto)}
                 style={{ height: "190px", width: "230px" }}
               />
             </Link>
 
-            <h3>{producto.name}</h3>
+            <h3>{producto.nome}</h3>
             <button onClick={() => togglePreviewModal(producto)}>
               Vista prévia
             </button>
@@ -83,18 +53,18 @@ export const DestacadosSection = () => {
         {selectedProduct && (
           <div className="preview-modal">
             <img
-              src={selectedProduct.imagem}
+              src={selectedProduct.image}
               alt={selectedProduct.nome}
               style={{ height: "180px", width: "200px" }}
             />
-            <h3>{selectedProduct.name}</h3>
+            <h3>{selectedProduct.nome}</h3>
             {selectedProduct.price !== undefined ? (
               <p>Preço: ${selectedProduct.price}</p>
             ) : (
               <p>Precio no disponible</p>
             )}
             <p>
-              Quantidade desejada: <input type="number" />
+              Quantidade desejada: <input type="number" min="1" />
             </p>
             <button
               onClick={() =>

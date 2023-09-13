@@ -3,17 +3,12 @@ import "./CartPage.css";
 import { Navbar } from "./Navbar";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faShoppingCart,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import { Footer } from "./Footer";
 
 export const CartPage = () => {
-  const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } =
-    useCart();
+  const { items, updateItemQuantity, removeItem } = useCart();
 
   return (
     <div>
@@ -28,7 +23,7 @@ export const CartPage = () => {
             {items.map((item) => (
               <li className="cart-item" key={item.id}>
                 <span className="text-cart">
-                  {item.quantity} x {item.name} - {item.price * item.quantity}
+                  {item.quantity} x {item.nome} - {item.price * item.quantity}
                 </span>
                 <div>
                   <button

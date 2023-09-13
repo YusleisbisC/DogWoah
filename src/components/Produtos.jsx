@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Navbar } from './Navbar';
-import { Footer } from './Footer';
-import './produtos.css';
-
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
+import "./produtos.css";
 
 export const Productos = () => {
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
@@ -18,12 +17,14 @@ export const Productos = () => {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const searchText = searchParams.get('search');
+    const searchText = searchParams.get("search");
 
     if (searchText) {
       // Realiza una llamada a tu API para buscar productos según el texto de búsqueda
       // Ejemplo de llamada a la API:
-      fetch(`https://tu-api.com/productos?search=${searchText}`)
+      fetch(
+        `https://dogwoah-servidor-production.up.railway.app/api/products?search=${searchText}`
+      )
         .then((response) => response.json())
         .then((data) => {
           if (data.length === 0) {
@@ -35,12 +36,12 @@ export const Productos = () => {
           }
         })
         .catch((error) => {
-          console.error('Error al obtener resultados de la API:', error);
+          console.error("Error al obtener resultados de la API:", error);
         });
     } else {
       // Si no hay texto de búsqueda, puedes cargar todos los productos desde la API
       // Ejemplo de llamada a la API para obtener todos los productos:
-      fetch('https://tu-api.com/productos')
+      fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
         .then((response) => response.json())
         .then((data) => {
           const filteredProducts = category
@@ -56,7 +57,7 @@ export const Productos = () => {
           }
         })
         .catch((error) => {
-          console.error('Error al obtener productos de la API:', error);
+          console.error("Error al obtener productos de la API:", error);
         });
     }
   }, [location.search, category]);
@@ -72,9 +73,9 @@ export const Productos = () => {
             value={category}
           >
             <option value="">Todas las categorías</option>
-            <option value="Alimentos">Alimentos</option>
-            <option value="/produtos/Baño" >Baño</option>
-            <option value="Brinquedos">Brinquedos</option>
+            <option value="Alimento">Alimentos</option>
+            <option value="banho">Baño</option>
+            <option value="brinquedo">Brinquedos</option>
           </select>
         </div>
         <div>
@@ -82,15 +83,17 @@ export const Productos = () => {
             {searchResults.length > 0 ? (
               searchResults.map((result) => (
                 <li key={result.id}>
-                  <Link to={`/productos/${result.id}`}>{result.name}</Link>
+                  <Link to={`/products/${result.id}`}>{result.name}</Link>
                 </li>
               ))
             ) : noResults ? (
-              <p>Resultados de búsqueda: No hubo resultados para tu búsqueda.</p>
+              <p>
+                Resultados de búsqueda: No hubo resultados para tu búsqueda.
+              </p>
             ) : (
               products.map((product) => (
                 <li key={product.id}>
-                  <Link to={`/productos/${product.id}`}>{product.name}</Link>
+                  <Link to={`/productos/${product.id}`}>{product.nome}</Link>
                 </li>
               ))
             )}
