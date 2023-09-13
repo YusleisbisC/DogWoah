@@ -49,7 +49,7 @@ export const AdminProducts = () => {
     formData.append("category", editCategory);
     formData.append("image", editImage);
     const responce = await axios.post(
-      "http://127.0.0.1:8000/products" + selectedProduct.id,
+      "http://127.0.0.1:8000/api/productsupdate/" + selectedProduct.id,
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },

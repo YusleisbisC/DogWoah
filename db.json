@@ -2,113 +2,55 @@
   "products": [
     {
       "id": 1,
-      "name": "Champú para cachorros",
-      "image": "/assets/champu-1.jpg",
+      "nome": "Champú para cachorros",
+      "imagem": "/assets/champu-1.jpg",
       "price": 12.99,
       "categoria": "banho",
       "descricao": ""
     },
     {
-      "id": 2,
-      "name": "Pelota de goma resistente",
-      "image": "/assets/champ.jpg",
-      "price": 9.99,
-      "categoria": "brinquedos",
-      "descricao": ""
-    },
-
-    {
-      "id": 3,
-      "name": "Snacks saludables",
-      "image": "/assets/cepillo.jpg",
-      "price": 5.2,
-      "categoria": "alimentos",
-      "descricao": ""
+      "nome": "rgdzvsd x",
+      "descricao": "dfbcyh nb",
+      "preco": "10",
+      "categoria": "",
+      "imagem": "/assets/champu-1.jpg",
+      "id": 2
     },
     {
-      "id": 1,
-      "name": "Champú para cachorros",
-      "image": "/assets/champu-1.jpg",
-      "price": 12.99,
-      "categoria": "banho"
+      "nome": "aefzscdsfgexb",
+      "descricao": "gebtsvgerx",
+      "preco": "45",
+      "categoria": "brinquedo",
+      "imagem": "/assets/champu-1.jpg",
+      "id": 3
     },
     {
-      "id": 2,
-      "name": "Pelota de goma resistente",
-      "image": "/assets/champ.jpg",
-      "price": 9.99,
-      "categoria": "brinquedos"
-    },
-
-    {
-      "id": 3,
-      "name": "Snacks saludables",
-      "image": "/assets/cepillo.jpg",
-      "price": 5.2,
-      "categoria": "alimentos"
+      "nome": "regfzcfaewfez",
+      "descricao": "gsexf",
+      "preco": "2",
+      "categoria": "brinquedo",
+      "imagem": {},
+      "id": 4
     },
     {
-      "id": 4,
-      "name": "Champú para cachorros",
-      "image": "/assets/champu-1.jpg",
-      "price": 12.99,
-      "categoria": "banho"
+      "nome": "regfzcfaewfez",
+      "descricao": "gsexf",
+      "preco": "2",
+      "categoria": "alimento",
+      "imagem": {},
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "Pelota de goma resistente",
-      "image": "/assets/champ.jpg",
-      "price": 9.99,
-      "categoria": "brinquedos"
-    },
-
-    {
-      "id": 6,
-      "name": "Snacks saludables",
-      "image": "/assets/cepillo.jpg",
-      "price": 5.2,
-      "categoria": "alimentos"
+      "id": 5
     },
     {
-      "id": 7,
-      "name": "Champú para cachorros",
-      "image": "/assets/champu-1.jpg",
-      "price": 12.99,
-      "categoria": "banho"
+      "id": 6
     },
     {
-      "id": 8,
-      "name": "Pelota de goma resistente",
-      "image": "/assets/champ.jpg",
-      "price": 9.99,
-      "categoria": "brinquedos"
-    },
-
-    {
-      "id": 9,
-      "name": "Snacks saludables",
-      "image": "/assets/cepillo.jpg",
-      "price": 5.2,
-      "categoria": "alimentos"
+      "id": 7
     },
     {
-      "id": 10,
-      "name": "Champú para cachorros",
-      "image": "/assets/champu-1.jpg",
-      "price": 12.99,
-      "categoria": "banho"
-    },
-    {
-      "id": 11,
-      "name": "Pelota de goma resistente",
-      "image": "/assets/champ.jpg",
-      "price": 9.99,
-      "categoria": "brinquedos"
+      "id": 8
     }
-
-    
-   
   ]
 }
-
-

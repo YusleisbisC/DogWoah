@@ -7,7 +7,7 @@ import { useCart } from "react-use-cart";
 import "./Brinquedos.css";
 
 export const BrinquedosPage = () => {
-  const [productosBanho, setProductosBanho] = useState([]);
+  const [productosBrinquedos, setProductosBrinquedos] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const { addItem } = useCart();
@@ -18,16 +18,16 @@ export const BrinquedosPage = () => {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("http://localhost:4000/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
+        if (data && Array.isArray(data)) {
           // Filtrar los productos por categoría "banho"
-          const productosBanho = data.products.filter(
-            (producto) => producto.category === "brinquedo"
+          const productosBrinquedos = data.filter(
+            (producto) => producto.categoria === "brinquedos"
           );
 
-          setProductosBanho(productosBanho);
+          setProductosBrinquedos(productosBrinquedos);
         } else {
           console.error(
             "La respuesta no contiene un arreglo de productos válidos."
@@ -39,21 +39,22 @@ export const BrinquedosPage = () => {
       });
   }, []);
 
+
   return (
     <div>
       <Navbar />
 
-      <div className="category-cover-brinquedos">
-        <h2>Brinquedos</h2>
+      <div className="category-cover">
+        <h2>Alimentos</h2>
       </div>
 
       <div className="destacados-list">
-        {productosBanho.map((product) => (
+        {productosBrinquedos.map((product) => (
           <div key={product.id} className="destacados-card">
-            <Link to={`produtos/${product.category}/${product.name}`}>
+            <Link to={`produtos/${product.categoria}/${product.nome}`}>
               <img
-                src={`http://127.0.0.1:8000/storage/${product.image}`}
-                alt={product.name}
+                src={product.imagem}
+                alt={product.nome}
                 onClick={() => togglePreviewModal(product)}
                 style={{ height: "190px", width: "230px" }}
               />
@@ -69,7 +70,7 @@ export const BrinquedosPage = () => {
           {selectedProduct && (
             <div className="preview-modal">
               <img
-                src={`http://127.0.0.1:8000/storage/${selectedProduct.image}`}
+                src={selectedProduct.imagem}
                 alt={selectedProduct.name}
                 style={{ height: "180px", width: "200px" }}
               />
@@ -100,3 +101,5 @@ export const BrinquedosPage = () => {
     </div>
   );
 };
+
+

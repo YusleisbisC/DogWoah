@@ -7,7 +7,7 @@ import { useCart } from "react-use-cart";
 import "./AlimentosPage.css";
 
 export const AlimentosPage = () => {
-  const [productosBanho, setProductosBanho] = useState([]);
+  const [productosAlimentos, setProductosAlimentos] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const { addItem } = useCart();
@@ -18,16 +18,16 @@ export const AlimentosPage = () => {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("http://localhost:4000/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
+        if (data && Array.isArray(data)) {
           // Filtrar los productos por categoría "banho"
-          const productosBanho = data.products.filter(
-            (producto) => producto.category === "alimento"
+          const productosAlimentos = data.filter(
+            (producto) => producto.categoria === "alimentos"
           );
 
-          setProductosBanho(productosBanho);
+          setProductosAlimentos(productosAlimentos);
         } else {
           console.error(
             "La respuesta no contiene un arreglo de productos válidos."
@@ -42,20 +42,18 @@ export const AlimentosPage = () => {
   return (
     <div>
       <Navbar />
-      {/* Portada de la categoría */}
-      <div className="category-cover-alimentos">
+
+      <div className="category-cover">
         <h2>Alimentos</h2>
-        {/* Puedes agregar una imagen de fondo aquí si lo deseas */}
       </div>
 
-      {/* Lista de productos */}
       <div className="destacados-list">
-        {productosBanho.map((product) => (
+        {productosAlimentos.map((product) => (
           <div key={product.id} className="destacados-card">
-            <Link to={`produtos/${product.category}/${product.name}`}>
+            <Link to={`produtos/${product.categoria}/${product.nome}`}>
               <img
-                src={`http://127.0.0.1:8000/storage/${product.image}`} // Usar producto.image en lugar de selectedProduct.image
-                alt={product.name}
+                src={product.imagem}
+                alt={product.nome}
                 onClick={() => togglePreviewModal(product)}
                 style={{ height: "190px", width: "230px" }}
               />
@@ -71,7 +69,7 @@ export const AlimentosPage = () => {
           {selectedProduct && (
             <div className="preview-modal">
               <img
-                src={`http://127.0.0.1:8000/storage/${selectedProduct.image}`}
+                src={selectedProduct.imagem}
                 alt={selectedProduct.name}
                 style={{ height: "180px", width: "200px" }}
               />
@@ -102,3 +100,4 @@ export const AlimentosPage = () => {
     </div>
   );
 };
+

@@ -16,11 +16,29 @@ export const DestacadosSection = () => {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("http://localhost:4000/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
-          setProductosDestacados(data.products);
+        if (data && Array.isArray(data)) {
+          // Filtrar los productos por categoría
+          const productosBanho = data.filter(
+            (producto) => producto.categoria === "banho"
+          );
+          const productosAlimento = data.filter(
+            (producto) => producto.categoria === "alimento"
+          );
+          const productosBrinquedo = data.filter(
+            (producto) => producto.categoria === "brinquedo"
+          );
+
+          // Seleccionar 10 productos aleatorios de cada categoría
+          const productosDestacados = [
+            ...selectRandomProducts(productosBanho, 5),
+            ...selectRandomProducts(productosAlimento, 5),
+            ...selectRandomProducts(productosBrinquedo, 5),
+          ];
+
+          setProductosDestacados(productosDestacados);
         } else {
           console.error(
             "La respuesta no contiene un arreglo de productos válidos."
@@ -32,6 +50,12 @@ export const DestacadosSection = () => {
       });
   }, []);
 
+  // Función para seleccionar productos aleatorios de una categoría
+  const selectRandomProducts = (products, count) => {
+    const shuffledProducts = products.sort(() => 0.5 - Math.random());
+    return shuffledProducts.slice(0, count);
+  };
+
   return (
     <section className="destacados-section">
       <h2>Produtos em destaque</h2>
@@ -40,8 +64,8 @@ export const DestacadosSection = () => {
           <div key={producto.id} className="destacados-card">
             <Link to={`produtos/${producto.category}/${producto.name}`}>
               <img
-                src={`http://127.0.0.1:8000/storage/${producto.image}`} // Usar producto.image en lugar de selectedProduct.image
-                alt={producto.name}
+                src={producto.imagem}
+                alt={producto.nome}
                 onClick={() => togglePreviewModal(producto)}
                 style={{ height: "190px", width: "230px" }}
               />
@@ -59,8 +83,8 @@ export const DestacadosSection = () => {
         {selectedProduct && (
           <div className="preview-modal">
             <img
-              src={`http://127.0.0.1:8000/storage/${selectedProduct.image}`}
-              alt={selectedProduct.name}
+              src={selectedProduct.imagem}
+              alt={selectedProduct.nome}
               style={{ height: "180px", width: "200px" }}
             />
             <h3>{selectedProduct.name}</h3>
