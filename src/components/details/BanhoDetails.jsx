@@ -11,11 +11,12 @@ const BanhoDetails = () => {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
-          setProductosDestacados(data.products);
+        if (data) {
+          setProductosDestacados(data);
+          console.log(data[0]);
         } else {
           console.error(
             "La respuesta no contiene un arreglo de productos válidos."
@@ -53,7 +54,7 @@ const BanhoDetails = () => {
                 <img
                   alt="product-img"
                   className="principal-img"
-                  src={`http://127.0.0.1:8000/storage/${product.image}`}
+                  src={`${product.image}`}
                 />
               </div>
             </div>
