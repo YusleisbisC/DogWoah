@@ -11,7 +11,7 @@ const BrinquedosDetails = () => {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
         if (data.products && Array.isArray(data.products)) {
@@ -53,7 +53,7 @@ const BrinquedosDetails = () => {
                 <img
                   alt="product-img"
                   className="principal-img"
-                  src={`http://127.0.0.1:8000/storage/${product.image}`}
+                  src={`"https://dogwoah-servidor-production.up.railway.app/api/products"/storage/${product.image}`}
                 />
               </div>
             </div>

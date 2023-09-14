@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { useCart } from "react-use-cart";
 import "./Brinquedos.css";
 
+
 export const BrinquedosPage = () => {
   const [productosBrinquedos, setProductosBrinquedos] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);

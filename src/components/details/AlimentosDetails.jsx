@@ -11,7 +11,7 @@ const AlimentosDetails = () => {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products")
+    fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
         if (data.products && Array.isArray(data.products)) {
@@ -53,13 +53,13 @@ const AlimentosDetails = () => {
                 <img
                   alt="product-img"
                   className="principal-img"
-                  src={`http://127.0.0.1:8000/storage/${product.image}`}
+                  src={`https://dogwoah-servidor-production.up.railway.app/api/products/storage/${product.image}`}
                 />
               </div>
             </div>
             <div className="product-details">
               <div className="details-container">
-                <h2>{product.name}</h2>
+                <h2>{product.nome}</h2>
 
                 <span className="price">${product.price}</span>
                 <p>{product.description}</p>
