@@ -51,7 +51,7 @@ export const BanhoPage = () => {
       <div className="destacados-list">
         {productosBanho.map((product) => (
           <div key={product.id} className="destacados-card">
-            <Link to={`produtos/${product.category}/${product.nome}`}>
+            <Link to={`/produtos/${product.category}/${product.id}`}>
               <img
                 src={product.image}
                 alt={product.nome}

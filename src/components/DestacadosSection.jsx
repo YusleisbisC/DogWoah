@@ -32,7 +32,7 @@ export const DestacadosSection = () => {
       <div className="destacados-list">
         {productosDestacados.reverse().map((producto) => (
           <div key={producto.id} className="destacados-card">
-            <Link to={`produtos/${producto.category}/${producto.nome}`}>
+            <Link to={`produtos/${producto.category}/${producto.id}`}>
               <img
                 src={producto.image}
                 alt={producto.nome}

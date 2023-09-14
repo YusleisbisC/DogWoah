@@ -28,7 +28,7 @@ export function App() {
             <Route
               exact
               path="/produtos/alimento"
-              element={<AlimentosPage />}
+              element={<AlimentosPage/>}
             />
             <Route
               exact
@@ -37,13 +37,13 @@ export function App() {
             />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/produtos/banho" element={<BanhoPage />} />
-            <Route path="/produtos/banho/:name" element={<BanhoDetails />} />
+            <Route path="/produtos/banho/:nome" element={<BanhoDetails />} />
             <Route
-              path="/produtos/alimento/:name"
+              path="/produtos/Alimento/:id"
               element={<AlimentosDetails />}
             />
             <Route
-              path="/produtos/brinquedo/:name"
+              path="/produtos/brinquedo/:id"
               element={<BrinquedosDetails />}
             />
 

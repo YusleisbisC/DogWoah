@@ -14,8 +14,9 @@ const AlimentosDetails = () => {
     fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data.products && Array.isArray(data.products)) {
-          setProductosDestacados(data.products);
+        if (data) {
+          setProductosDestacados(data);
+          console.log(data[0]);
         } else {
           console.error(
             "La respuesta no contiene un arreglo de productos válidos."
@@ -32,10 +33,10 @@ const AlimentosDetails = () => {
   useEffect(() => {
     // Busca el producto correspondiente a través del parámetro 'name'
     const selectedProduct = productosDestacados.find(
-      (product) => product.name === params.name
+      (product) => product.id === params.id
     );
     setProduct(selectedProduct);
-  }, [params.name, productosDestacados]);
+  }, [params.id, productosDestacados]);
 
   return (
     <div>
@@ -53,7 +54,7 @@ const AlimentosDetails = () => {
                 <img
                   alt="product-img"
                   className="principal-img"
-                  src={`https://dogwoah-servidor-production.up.railway.app/api/products/storage/${product.image}`}
+                  src={`http://127.0.0.1:8000/storage/${product.image}`}
                 />
               </div>
             </div>

@@ -21,7 +21,7 @@ export const AlimentosPage = () => {
     fetch("https://dogwoah-servidor-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
-        if (data && Array.isArray(data)) {
+        if (data) {
           // Filtrar los productos por categoría "banho"
           const productosAlimentos = data.filter(
             (producto) => producto.category === "Alimento"
@@ -50,7 +50,7 @@ export const AlimentosPage = () => {
       <div className="destacados-list">
         {productosAlimentos.map((product) => (
           <div key={product.id} className="destacados-card">
-            <Link to={`produtos/${product.category}/${product.nome}`}>
+            <Link to={`/produtos/${product.category}/${product.id}`}>
               <img
                 src={product.image}
                 alt={product.nome}
