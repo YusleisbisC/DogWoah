@@ -1,55 +1,126 @@
+/* AlimentosDetails.css */
+
+/* Estilos generales */
 .card-details {
-  width: 100%;
-  height: 80vh;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  
 }
 
-.product-details {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.product-image-container {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
 }
 
 .product-image {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.image-container {
-  width: 70%;
-  height: 80%;
-}
-
-.details-container {
-  width: 90%;
-  height: 80%;
+.product-details {
+  width: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+}
+
+.product-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .price {
-  font-size: 25px;
+  font-size: 18px;
+  color: #f44336;
+  margin-bottom: 10px;
 }
 
-.product-btn {
-  width: 200px;
-  border-radius: 3px;
+.product-details p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .btn-container {
   display: flex;
-  gap: 10px;
-  margin-top: 60px;
+ justify-content: space-between;
+  align-items: center;
+  
 }
 
-.principal-img {
-  width: 100%;
-  height: 100%;
+.product-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+  margin-bottom: 60px;
+}
+
+.product-btn:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para pantallas medianas (entre 620px y 960px) */
+@media (min-width: 620px) and (max-width: 960px) {
+  .card-details {
+    
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    
+  }
+}
+
+/* Estilos para pantallas pequeñas (menos de 620px) */
+@media (max-width: 619px) {
+  .card-details {
+    
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    
+  }
+}
+
+/* Estilos para pantallas extra pequeñas (menos de 420px) */
+@media (max-width: 419px) {
+  .card-details {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    
+  }
 }

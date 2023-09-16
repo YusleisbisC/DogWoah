@@ -29,5 +29,3 @@ export const Slideshow = () => {
     </Carousel>
   );
 };
-
-

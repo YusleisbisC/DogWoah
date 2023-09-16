@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "../Navbar";
-import { Footer } from "../Footer";
 import "./AlimentosDetails.css";
 import { useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
+import { Footer } from "../Footer";
+import { Link } from "react-router-dom";
 
 const AlimentosDetails = () => {
   const [productosDestacados, setProductosDestacados] = useState([]);
@@ -41,43 +42,38 @@ const AlimentosDetails = () => {
   return (
     <div>
       <Navbar />
-
       <div>
-        <h2>Alimentos</h2>
+        <h2>Brinquedos</h2>
       </div>
-
       {product ? ( // Verifica si product está definido
-        <div className="product-list">
-          <div className="card-details">
-            <div className="product-image">
-              <div className="image-container">
-                <img
-                  alt="product-img"
-                  className="principal-img"
-                  src={`http://127.0.0.1:8000/storage/${product.image}`}
-                />
-              </div>
+        <div className="card-details">
+          <div>
+            <div>
+              <img
+                src={product.image}
+                alt={product.nome}
+                style={{}}
+              />
             </div>
-            <div className="product-details">
-              <div className="details-container">
-                <h2>{product.nome}</h2>
-
-                <span className="price">${product.price}</span>
-                <p>{product.description}</p>
-                <div className="btn-container">
+            <div>
+              <h2>{product.nome}</h2>
+              <span className="price">${product.price}</span>
+              <p>{product.description}</p>
+              <div className="btn-container">
+                <Link to="/Finish">
                   <button className="product-btn">Comprar Agora</button>
-                  <button
-                    className="product-btn"
-                    onClick={() =>
-                      addItem({
-                        ...product,
-                        totalPrice: product.price,
-                      })
-                    }
-                  >
-                    Adicionar ao carrinho
-                  </button>
-                </div>
+                </Link>
+                <button
+                  className="product-btn"
+                  onClick={() =>
+                    addItem({
+                      ...product,
+                      totalPrice: product.price,
+                    })
+                  }
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
           </div>

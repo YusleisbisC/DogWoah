@@ -8,27 +8,16 @@
 /* Estilo para las imágenes en el carrusel */
 .carousel-item img {
   width: 100%; /* Asegura que las imágenes se ajusten al ancho del carrusel */
-  height: 610px; /* Permite que la altura se ajuste automáticamente */
+  max-height: 610px; /* Establece una altura máxima para evitar que las imágenes se desborden en pantallas pequeñas */
+  object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir todo el área del carrusel */
 }
 
 /* Estilo para los captions de las diapositivas */
-
-
-/* Estilo para el texto del caption h3 */
-.carousel-caption h3 {
-  font-size: 24px; /* Tamaño de fuente para el título */
-  margin: 0; /* Elimina el margen predeterminado */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para los captions */
+  padding: 10px; /* Espaciado interno para los captions */
+  color: #fff; /* Color del texto de los captions */
 }
-
-/* Estilo para el texto del caption p */
-.carousel-caption p {
-  font-size: 16px; /* Tamaño de fuente para el párrafo */
-  margin: 0; /* Elimina el margen predeterminado */
-}
-
-
-
-
 
 /* Estilo para el título principal */
 .main-title {
@@ -45,13 +34,14 @@
   font-size: 24px;
   color: #666;
   line-height: 2;
-   text-align: center;
+  text-align: center;
   padding: 10px;
   margin-bottom: 20px;
 }
-.title{
+
+.title {
   text-align: center;
   padding: 10px;
   margin-bottom: 25px;
-  font-size:larger;
+  font-size: larger;
 }

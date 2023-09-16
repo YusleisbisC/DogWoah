@@ -33,3 +33,30 @@
   display: flex;
   justify-content: end;
 }
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  /* Estilos para tablas en pantallas pequeñas */
+  .table {
+    overflow-x: auto;
+  }
+
+  /* Estilos para las ventanas modales en pantallas pequeñas */
+  .preview-modal,
+  .create-modal,
+  .delete-modal {
+    text-align: center;
+  }
+
+  /* Reducción de tamaños de fuente y margen en pantallas pequeñas */
+  .fw-bold {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  /* Ajuste de tamaños de íconos y botones en pantallas pequeñas */
+  .td-icon {
+    font-size: 20px;
+  }
+
+  /* ... Otros estilos y ajustes según sea necesario ... */
+}

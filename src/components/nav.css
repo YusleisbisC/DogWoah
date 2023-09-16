@@ -8,6 +8,7 @@
   letter-spacing: 2px;
   padding: 15px;
 }
+
 /* Estilos para el logotipo */
 .logo {
   font-family: "Your-Font-Here", sans-serif;
@@ -104,14 +105,36 @@
     padding: 5px;
   }
 
-  @media (max-width: 428px) {
-    /* Estilos para los iconos en dispositivos móviles */
-    .search-icon,
-    .cart-icon,
-    .auth-icon {
-      font-size: 20px;
-      margin: 10px;
-      padding: 5px;
-    }
+  /* Nuevos estilos para el menú desplegable */
+  .navbar-toggler {
+    color: white; /* Color del ícono del botón de menú desplegable */
+    background-color: transparent; /* Fondo transparente para el botón de menú desplegable */
+    border: none; /* Elimina el borde del botón de menú desplegable */
+  }
+
+  .navbar-toggler-icon {
+    background-color: #fff; /* Color de las barras del ícono del botón de menú desplegable */
+  }
+
+  /* Estilo para el menú desplegable */
+  .navbar-collapse {
+    background-color: #333; /* Color de fondo del menú desplegable */
+    padding: 20px; /* Espaciado interno del menú desplegable */
+  }
+
+  .navbar-nav .nav-item {
+    padding: 10px 0;
+  }
+}
+
+/* Media Query para pantallas más pequeñas (ejemplo: 428px) */
+@media (max-width: 428px) {
+  /* Estilos para los iconos en dispositivos móviles */
+  .search-icon,
+  .cart-icon,
+  .auth-icon {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
   }
 }
