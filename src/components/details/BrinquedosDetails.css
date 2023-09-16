@@ -3,16 +3,15 @@
 /* Estilos generales */
 .card-details {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Cambiar a apilamiento vertical en pantallas pequeñas */
   align-items: center;
   width: 100%;
-  height: auto;
-  padding: 40px;
+  padding: 20px; /* Reducir el relleno en pantallas pequeñas */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 5px;
   text-align: center;
-  
+  overflow-x: hidden;
 }
 
 .product-image-container {
@@ -24,16 +23,13 @@
 
 .product-image {
   max-width: 100%;
-  max-height: 100%;
+  height: auto; /* Asegurar que la imagen se ajuste automáticamente en pantallas pequeñas */
   object-fit: contain;
 }
 
 .product-details {
   width: 100%;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .product-details h2 {
@@ -53,10 +49,11 @@
 }
 
 .btn-container {
+  width: 100%;
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
-  
+  flex-wrap: wrap; /* Permitir que los botones se envuelvan en pantallas pequeñas */
 }
 
 .product-btn {
@@ -68,8 +65,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
- 
-  margin-bottom: 60px;
+  margin-bottom: 20px; /* Espaciado inferior reducido en pantallas pequeñas */
 }
 
 .product-btn:hover {
@@ -79,48 +75,42 @@
 /* Estilos para pantallas medianas (entre 620px y 960px) */
 @media (min-width: 620px) and (max-width: 960px) {
   .card-details {
-    
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    
+    padding: 40px; /* Restaurar el relleno en pantallas medianas */
   }
 }
 
 /* Estilos para pantallas pequeñas (menos de 620px) */
 @media (max-width: 619px) {
   .card-details {
-    
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    
+    padding: 40px; /* Restaurar el relleno en pantallas pequeñas */
   }
 }
 
-/* Estilos para pantallas extra pequeñas (menos de 420px) */
-@media (max-width: 419px) {
+/* Estilos para pantallas muy pequeñas (menos de 360px) */
+@media (max-width: 359px) {
   .card-details {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    padding: 10px;
+     /* Reducir el relleno aún más en pantallas muy pequeñas */
+  }
+
+  .product-details h2 {
+    font-size: 20px; /* Ajustar el tamaño de fuente para títulos en pantallas muy pequeñas */
+  }
+
+  .price {
+    font-size: 16px; /* Ajustar el tamaño de fuente para precios en pantallas muy pequeñas */
+  }
+
+  .product-btn {
+    padding: 5px 10px; /* Reducir el relleno del botón en pantallas muy pequeñas */
+    font-size: 14px; /* Ajustar el tamaño de fuente del botón en pantallas muy pequeñas */
+    margin-bottom: 10px; /* Espaciado inferior reducido en pantallas muy pequeñas */
+  }
+  
+  .btn-container {
     width: 100%;
-    height: auto;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center;
+    gap: 10px; /* Agregar espacio entre los botones apilados */
   }
 }

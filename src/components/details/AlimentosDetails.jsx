@@ -59,7 +59,7 @@ const AlimentosDetails = () => {
               <h2>{product.nome}</h2>
               <span className="price">${product.price}</span>
               <p>{product.description}</p>
-              <div className="btn-container">
+              <div >
                 <Link to="/Finish">
                   <button className="product-btn">Comprar Agora</button>
                 </Link>

@@ -12,6 +12,7 @@
   background-color: #fff;
   border-radius: 5px;
   text-align: center;
+  overflow-x: hidden;
   
 }
 
@@ -122,5 +123,41 @@
     border-radius: 5px;
     text-align: center;
     
+ 
   }
+
+/* Estilos para pantallas muy pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+  .card-details {
+    flex-direction: column;
+    align-items: center;
+   
+   
+    
+  }
+
+ 
+
+  .product-details h2 {
+    font-size: 20px; /* Ajustar el tamaño de fuente para títulos en pantallas muy pequeñas */
+  }
+
+  .price {
+    font-size: 16px; /* Ajustar el tamaño de fuente para precios en pantallas muy pequeñas */
+  }
+
+  .product-btn {
+    padding: 5px 10px; /* Reducir el relleno del botón en pantallas muy pequeñas */
+    font-size: 14px; /* Ajustar el tamaño de fuente del botón en pantallas muy pequeñas */
+    margin-bottom: 10px; /* Espaciado inferior reducido en pantallas muy pequeñas */
+  }
+  
+  .btn-container {
+    width: 100%;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center;
+    gap: 5px; /* Agregar espacio entre los botones apilados */
+  }
+}
+
 }
